@@ -1,0 +1,14 @@
+# Office lock + temp files
+~$*
+*.tmp
+
+# OS / sync artifacts
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Credentials must never enter version control
+*Logins*
+*ogins*.xlsx
+*password*
+*credential*

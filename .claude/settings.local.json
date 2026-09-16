@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__baa0640c-d3a1-4215-bf48-a6b255084992__run-analytics-query",
+      "mcp__df39b5ae-08ba-45cd-9a7f-28035c505851__query_metric_aggregates",
+      "mcp__df39b5ae-08ba-45cd-9a7f-28035c505851__get_campaigns"
+    ]
+  }
+}
