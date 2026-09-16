@@ -75,13 +75,26 @@ one, and the sourced version is what earns press. Not a blocker. Worth doing.
 **Question:** Site legal pages say 15500 Cornet St., Santa Fe Springs, CA 90670.
 The Facebook page says Austin, TX. Which is the real NAP address?
 
-**ANSWER:**
+**ANSWER:** **15500 Cornet St., Santa Fe Springs, CA 90670.** The legal pages were
+right; the Austin, TX listing was wrong and is already dark.
 
-**Status:** `OPEN`
+**Canonical NAP string — use this character-for-character, everywhere:**
 
-**Blocking:** `W-02` Organization schema · `L-01` Google Business Profile ·
-`L-04` directory listings. Conflicting NAP actively suppresses local ranking, so every
-week this stays open is a week of lost local visibility.
+```
+15500 Cornet St.
+Santa Fe Springs, CA 90670
+```
+
+**Status:** `PROPAGATED` — answered 2026-09-15. `B-02` closed in the SEO checklist;
+`L-01` and `W-02` unblocked; `L-04` given the canonical string.
+
+**Two-thirds of NAP is still open.** Name, Address, Phone all have to match everywhere,
+and only the address is settled. **Name:** the legal entity is Official Wheel Company
+and the brand is Jackman Wheels — Google Business Profile takes one, and a mismatch
+between the profile name and the site's legal pages costs the same ranking the address
+conflict did. **Phone:** no number is recorded anywhere in this folder. Both need
+locking before `L-01` and `L-04` can actually be executed, and neither is a decision
+only you can make quickly. See `D-10`.
 
 **Update 15 Sep 2026 — the Austin TX source has gone dark, and there appear to be two
 Facebook pages.** Kevin's audit cited page ID `61560110244171` as the one listing Austin,
@@ -89,13 +102,12 @@ TX. That page now returns *"This content isn't available right now."* The page t
 website actually links to is a **different ID — `61590115023694`** — with 23 followers,
 posting actively, and no address in its public Intro.
 
-So this may be a stale-duplicate-page problem rather than a genuine address dispute.
-**Two questions, not one:**
-1. What is the correct HQ address? *(still needs your answer — nothing above confirms
-   Santa Fe Springs, it only removes the public contradiction)*
+So this was a stale-duplicate-page problem rather than a genuine address dispute.
+**It was two questions, not one:**
+1. What is the correct HQ address? — **answered above, 15 Sep 2026.**
 2. Do we control the old page `61560110244171`, and should it be merged or removed?
-   A second brand page splits search authority and confuses customers even when it's
-   invisible to us.
+   — **carved out to `D-11`.** It is a separate piece of work with a separate owner,
+   and leaving it inside a closed item is how it gets forgotten.
 
 ---
 
@@ -198,6 +210,51 @@ regardless of how the palette resolves.
 
 **Standing rule:** nothing is approved because it appears in a document. A number in a
 plan is a proposal until you say otherwise here.
+
+---
+
+## D-10 — NAP name and phone number
+
+**Question:** Two of the three NAP fields are still unset. Which business name goes on
+the Google Business Profile and every directory — **Official Wheel Company** (the legal
+entity on the site's legal pages) or **Jackman Wheels** (the brand)? And what phone
+number do we publish?
+
+**ANSWER:**
+
+**Status:** `OPEN` — raised 2026-09-15 when `D-02` settled the address.
+
+**Blocking:** `L-01` Google Business Profile · `L-04` directory listings. Both were
+listed as blocked on the address alone, which was incomplete — neither can actually be
+executed without all three fields. NAP consistency means *name, address and phone*
+matching character-for-character across every listing; one settled field out of three
+does not unblock the work.
+
+**Note:** no phone number appears anywhere in this folder. If there isn't a published
+business line, that is the answer to find first — a Google Business Profile without a
+phone number ranks worse and reads as abandoned.
+
+---
+
+## D-11 — Duplicate Facebook page
+
+**Question:** Do we control page ID `61560110244171` — the one Kevin's audit found
+listing Austin, TX, now returning *"This content isn't available right now"* — and should
+it be merged into `61590115023694` or removed?
+
+**ANSWER:**
+
+**Status:** `OPEN` — carved out of `D-02` on 2026-09-15.
+
+**Why it stayed open when the address closed:** the address conflict is resolved because
+the bad listing went dark. The *page* is still there. A second brand page splits search
+authority and confuses customers even while it is invisible to us, and an unclaimed page
+we don't control is worse than one we do — it can come back.
+
+**First step is a question, not a decision:** does anyone at Official Wheel Company have
+admin on `61560110244171`? If yes, Facebook can merge it into the live page and the
+followers transfer. If no, it's a brand-rights claim through Facebook support, which is
+slower. Either way `L-01` and the social profile audit want this settled.
 
 ---
 

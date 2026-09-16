@@ -100,11 +100,12 @@ every day it stays broken, and most of it takes under an hour.
       fixes the inconsistency; **documentation is what makes the claim un-disprovable**,
       and it's what earns the press coverage in `L-05`. Not a blocker — do it anyway. ·
       *Effort: depends entirely on what the family has*
-- [ ] **B-02 — Settle the HQ address.** Site legal pages say 15500 Cornet St., Santa Fe
-      Springs, CA 90670. Facebook says Austin, TX. Conflicting NAP actively suppresses
-      local ranking. Pick the correct one, then make every profile, directory listing
-      and schema block match it character-for-character. · *Effort: 1h + propagation ·
-      Blocks: L-01, W-02*
+- [x] **B-02 — Settle the HQ address.** ✅ **DONE 15 Sep 2026** — recorded as `D-02`.
+      The legal pages were right; the Austin, TX listing was wrong and is already dark.
+      Canonical string, character-for-character everywhere:
+      **`15500 Cornet St.` / `Santa Fe Springs, CA 90670`**. · *Unblocks W-02.
+      **L-01 and L-04 are not fully unblocked** — NAP is name, address and phone, and
+      only the address is settled. See `D-10`.*
 - [x] **B-03 — Open the `jackmanwheels.shop` question with counsel.** ✅ **DONE 15 Sep
       2026.** Question is routed. The *answer* lands in `B-03b` (Phase 4) and gets
       recorded as `D-03` — still open until counsel comes back.
@@ -123,8 +124,10 @@ every day it stays broken, and most of it takes under an hour.
 - [ ] **W-02 — Populate Organization schema.** Verified live 15 Sep 2026 — it still
       carries only `name` and `url`, nothing else:
       `{"@type":"Organization","name":"Jackman Wheels","url":"https://jackmanwheels.com"}`
-      **W-01 gave us the profile URLs, so this is now a paste job.** Drop this in and
-      fill the two blanks once `B-02` lands:
+      **W-01 gave us the profile URLs and `B-02` gave us the address, so this is now a
+      paste job.** One blank left — `telephone`, pending `D-10`. Ship it with the phone
+      line removed rather than holding the whole block for it; a schema block with an
+      address beats no schema block:
 
       ```json
       {
@@ -133,13 +136,13 @@ every day it stays broken, and most of it takes under an hour.
         "name": "Jackman Wheels",
         "url": "https://jackmanwheels.com",
         "logo": "https://jackmanwheels.com/[path-to-logo].png",
-        "telephone": "[pending B-02]",
+        "telephone": "[pending D-10]",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "[pending B-02]",
-          "addressLocality": "[pending B-02]",
+          "streetAddress": "15500 Cornet St.",
+          "addressLocality": "Santa Fe Springs",
           "addressRegion": "CA",
-          "postalCode": "[pending B-02]",
+          "postalCode": "90670",
           "addressCountry": "US"
         },
         "sameAs": [
@@ -260,8 +263,10 @@ until it feels urgent.
       pattern, offset, backspacing, load rating. Crawlable spec tables rank for long-tail
       searches nobody else targets. · *Effort: 1 day*
 - [ ] **L-01 — Claim and fully complete the Google Business Profile** — categories,
-      hours, photos, products, and a post every week. · *Effort: 3h + weekly · Blocked
-      by: B-02*
+      hours, photos, products, and a post every week. Address is settled:
+      `15500 Cornet St., Santa Fe Springs, CA 90670`. · *Effort: 3h + weekly · Blocked
+      by: `D-10` — the profile needs a business name and a phone number, and neither is
+      decided. B-02 settled only the address.*
 - [ ] **P-08 — Start cross-posting to TikTok and YouTube Shorts.** *(No setup cost — accounts confirmed live 15 Sep, just empty.)* Same Reels,
       **re-edited and re-captioned** — never the raw file. Watermarked cross-platform
       content is excluded from recommendations outright. Shorts are indexed by Google
@@ -288,7 +293,9 @@ Theme: stop guessing. You'll finally have your own data instead of Buffer's aver
       dealer a badge, a link, and copy they can paste on their own site — every dealer
       who uses it is a backlink. · *Effort: 1 day*
 - [ ] **L-04 — Get listed in the wheel-and-tire directories and fitment databases.** NAP
-      identical everywhere. · *Effort: 1 day*
+      identical everywhere — address is `15500 Cornet St., Santa Fe Springs, CA 90670`,
+      character-for-character, no variant spellings. · *Effort: 1 day · Blocked by:
+      `D-10` for the name and phone fields.*
 - [ ] **L-05 — Pitch the heritage story to off-road and classic-truck media.** A 1968
       California brand coming back in 2026 is a genuinely good story, and earned
       editorial links outweigh anything we can build ourselves. · *Unblocked. Strongest with B-07 done.*
