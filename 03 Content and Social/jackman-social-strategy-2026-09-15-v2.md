@@ -326,7 +326,8 @@ If it fails, the fix is always the same: shoot a truck.
 6. Founding decade mentioned? Then it comes out.
 7. "Lifetime warranty" unqualified, or any implication of off-road coverage? Then it comes out.
 8. Bronze type on graphite? 2.87:1 — it vanishes on a phone in daylight.
-9. Run `scripts/brand_check.py` on the caption.
+9. Run `scripts/brand_check.ps1` on the caption. Mechanical check only — it catches
+   what a pattern can catch, never pillar, job, sendability or tone.
 
 ---
 
