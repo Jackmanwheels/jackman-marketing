@@ -88,13 +88,8 @@ Santa Fe Springs, CA 90670
 **Status:** `PROPAGATED` — answered 2026-09-15. `B-02` closed in the SEO checklist;
 `L-01` and `W-02` unblocked; `L-04` given the canonical string.
 
-**Two-thirds of NAP is still open.** Name, Address, Phone all have to match everywhere,
-and only the address is settled. **Name:** the legal entity is Official Wheel Company
-and the brand is Jackman Wheels — Google Business Profile takes one, and a mismatch
-between the profile name and the site's legal pages costs the same ranking the address
-conflict did. **Phone:** no number is recorded anywhere in this folder. Both need
-locking before `L-01` and `L-04` can actually be executed, and neither is a decision
-only you can make quickly. See `D-10`.
+**The other two NAP fields were settled the same day** — name and phone, in `D-10`. The
+complete canonical block lives there; this item holds the address alone.
 
 **Update 15 Sep 2026 — the Austin TX source has gone dark, and there appear to be two
 Facebook pages.** Kevin's audit cited page ID `61560110244171` as the one listing Austin,
@@ -220,19 +215,35 @@ the Google Business Profile and every directory — **Official Wheel Company** (
 entity on the site's legal pages) or **Jackman Wheels** (the brand)? And what phone
 number do we publish?
 
-**ANSWER:**
+**ANSWER:** **Name is Jackman Wheels.** No Official Wheel Company callout in marketing —
+profiles, directories, schema, listings, all of it reads Jackman Wheels.
+**Phone is 562-946-4800.**
 
-**Status:** `OPEN` — raised 2026-09-15 when `D-02` settled the address.
+**Canonical NAP block — character-for-character, every listing, no variants:**
 
-**Blocking:** `L-01` Google Business Profile · `L-04` directory listings. Both were
-listed as blocked on the address alone, which was incomplete — neither can actually be
-executed without all three fields. NAP consistency means *name, address and phone*
-matching character-for-character across every listing; one settled field out of three
-does not unblock the work.
+```
+Jackman Wheels
+15500 Cornet St.
+Santa Fe Springs, CA 90670
+562-946-4800
+```
 
-**Note:** no phone number appears anywhere in this folder. If there isn't a published
-business line, that is the answer to find first — a Google Business Profile without a
-phone number ranks worse and reads as abandoned.
+For `schema.org` markup the `telephone` value takes the international form,
+**`+1-562-946-4800`** — that is the schema convention, not an inconsistency with the
+display format above. Everywhere a human reads it, use `562-946-4800`.
+
+**Status:** `PROPAGATED` — answered 2026-09-15. `L-01` and `L-04` unblocked; `W-02`
+Organization schema now has every field it needs.
+
+**NOT COVERED BY THIS ANSWER — one carve-out, and it is a legal question, not a brand
+one.** "No Official Wheel Company callout" is the right answer for marketing surfaces.
+It does not extend to **legal-entity disclosure**: the email footer
+(`jackman-email-offroad-expo-2026-v2.md`, build notes) names Official Wheel Company as
+the legal entity, and the site legal pages do the same. Commercial-email sender
+identification and the entity named in terms and privacy pages are compliance
+requirements with their own rules, and stripping the entity name out of them is not a
+marketing call. **Route to Kris Maya before changing any footer or legal page.** Nothing
+has been changed on that basis.
 
 ---
 
