@@ -1,6 +1,6 @@
 # Brand Change Proposal — Publishing Confirmed Load Ratings
 
-**Proposed by:** Austin Fitzgerald · **Date:** 2026-09-23 · **Status:** awaiting ratification
+**Proposed by:** Austin Fitzgerald · **Date:** 2026-09-23 · **Status:** applied 2026-09-23 (in-repo redlines only — see note below)
 **Classification:** **MAJOR** — a standing prohibition is being lifted, and a live spec table becomes correct where it was previously unauthorized.
 **Decision source:** `00 Marketing Command Center/06 Standards and Conventions/jackman-decisions-inbox.md` → `D-06`
 
@@ -109,3 +109,9 @@ Apply the two redlines above (guardrail #4 and `brand_check.ps1` rule `G4`), upd
 operating guide line, flag the `jackman-brand-guidelines` plugin for the equivalent
 change (outside this repo's reach), then flip `D-06` in the decisions inbox from
 `PROPOSED` to `PROPAGATED` and list what changed.
+
+**Applied 2026-09-23.** All three in-repo redlines are live: guardrail #4, `brand_check.ps1`
+rule `G4`, and the operating guide's PDP-audit line. The `.claude/skills/chief-of-marketing/SKILL.md`
+summary was also updated. `D-06` is now `PROPAGATED`. **Still outstanding:** the
+`jackman-brand-guidelines` plugin's own reference files, unreachable from this session —
+whoever maintains that plugin should apply the equivalent change there.

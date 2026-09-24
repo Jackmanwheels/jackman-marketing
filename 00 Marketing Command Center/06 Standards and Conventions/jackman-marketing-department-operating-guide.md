@@ -175,7 +175,8 @@ whether it worked. A one-line note per change is the whole discipline.
 
 **Put in it first** — A PDP audit. One row per live product, checked against your
 brand pre-flight list: exact finish names, fitment caveat present, no placeholder
-specs, no load rating claims.
+specs, load rating matches the confirmed figure for that wheel's lug pattern (2650 lbs
+5-lug/6-lug, 4500 lbs 8-lug).
 
 ---
 

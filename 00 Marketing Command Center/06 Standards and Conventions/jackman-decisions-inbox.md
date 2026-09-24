@@ -159,15 +159,20 @@ wrote it.
 everywhere including Our Story. That's the part being revised — everything else about
 the original proposal (the replacement vocabulary for every other channel) stands.
 
-**Status:** `PROPOSED` — see
+**Status:** `PROPAGATED` — applied 2026-09-23. Guardrail #16 in
+`jackman-claude-instructions.md` and rule `G16` in `scripts/brand_check.ps1` (downgraded
+BLOCK → WARN, since a regex can't tell whether a hit is on the Our Story page) both now
+reflect this. See
 `01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-founder-names-v2.md`
-(supersedes v1 — the redlines only change what's true for the Our Story page). Status
-stays `PROPOSED` until applied.
+(supersedes v1) for the full redline. **Not yet propagated:** the `jackman-brand-guidelines`
+plugin's own reference files, and v1's redline list of live copy needing re-issuing
+(boilerplates, pitches, press template, dealer materials) — none of that is in this
+repo's reach.
 
-**Flag from the CRO agent's 2026-09-23 investigation:** it found "Harry and Sheryl
-Jackman" in the Wheel Details section of the **J68 product page** — that's outside Our
-Story, so this occurrence is likely still a case for the unnamed phrasing, not one this
-revised answer excuses. Worth a look once ratified.
+**Still open, not excused by this decision:** the CRO agent's 2026-09-23 investigation
+found "Harry and Sheryl Jackman" in the Wheel Details section of the **J68 product
+page** — that's outside Our Story, so it still needs the unnamed phrasing. Not yet
+fixed on the live site.
 
 ---
 
@@ -183,15 +188,17 @@ state the number for that wheel's lug pattern.
 Austin confirmed the weight figures, not a certification standard. Those two are
 different claims and guardrail #4 conflated them; the redline separates them.
 
-**Status:** `PROPOSED` — answered 2026-09-23. Guardrail #4 is a numbered guardrail, so
-per this file's own rule the source isn't edited directly — see
-`01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-load-ratings-v1.md`
-for the redline. Status stays `PROPOSED` until applied.
+**Status:** `PROPAGATED` — applied 2026-09-23. Guardrail #4 in
+`jackman-claude-instructions.md`, rule `G4` in `scripts/brand_check.ps1`, and the PDP
+audit line in `jackman-marketing-department-operating-guide.md` all now reflect this.
+See `01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-load-ratings-v1.md`
+for the full redline. **Not yet propagated:** the `jackman-brand-guidelines` plugin's
+own reference files — outside this repo's reach.
 
 **Worth knowing:** the J68 Classic 68 (5x5, 5-lug) PDP already shows "Load Rating (lbs):
 2650" — it was live before this was authorized, and it turns out to already be correct.
-No copy fix needed there once this is ratified; the guardrail is catching up to a number
-that was already right.
+No copy fix needed there; the guardrail was catching up to a number that was already
+right.
 
 ---
 

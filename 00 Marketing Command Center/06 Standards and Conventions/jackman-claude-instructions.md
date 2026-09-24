@@ -1,7 +1,11 @@
 # Jackman Marketing — Claude Operating Instructions
 
 *Paste everything below into Claude's custom or project instructions.*
-*v2 — 2026-08-26 — added guardrail 16 (founder names).*
+*v3 — 2026-09-23 — guardrail 4 (load ratings confirmed, by lug pattern) and guardrail 16
+(founder names confined to the website Our Story page) both revised. See
+`jackman-brand-change-proposal-load-ratings-v1.md` and
+`jackman-brand-change-proposal-founder-names-v2.md` in
+`01 Brand and Creative/01 Brand Guidelines and Tokens`.*
 
 ---
 
@@ -94,7 +98,7 @@ These are the rules that cause real damage:
 1. **Finishes are three exact strings:** Satin Black · Matte Bronze · Machined As-Cast. Never Gloss Black, Flat Black, Copper, Gold, Polished, Chrome, Silver, or bare "Bronze" / "Black" / "Machined."
 2. **Classic 68 in all copy.** `j68` is filenames only. Zero instances of "J68" in anything a customer or dealer reads.
 3. **Only six models exist:** Classic 68 and J69–J73. Never invent J74 or beyond.
-4. **No load rating, ever.** No JWL / VIA / SAE / TÜV certification claim. In a spec table the cell reads `Load rating: pending engineering release`.
+4. **Load rating is confirmed and sayable — by lug pattern.** 5-lug and 6-lug: **2650 lbs**. 8-lug: **4500 lbs**. Still no JWL / VIA / SAE / TÜV certification claim — a load-rating number and a certification are different claims, and only the number is confirmed. If a lug pattern outside these two doesn't have a released figure, the cell reads `Load rating: pending engineering release` — this only lifts the prohibition for 5-lug, 6-lug, and 8-lug.
 5. **No founding decade or year.** The founding date is unresolved. Use "California-born."
 6. **No torque value from memory.** Write "torque to your vehicle manufacturer's specification."
 7. **Never construct a part number.** Transcribe from a source list or leave it out. The SKU encoding is unconfirmed.
@@ -106,7 +110,7 @@ These are the rules that cause real damage:
 13. **Contrast:** bronze on graphite fails at 2.87:1 — don't specify it. Warning text goes in bone white with red only on the rule beside it.
 14. **Never state a hex value from memory.** Read `brand-tokens.json`. The palette is still provisional.
 15. **Avoid militarized register** — dominate, conquer, destroy, tactical, weaponized. Prefer built, proven, holds up, keeps going.
-16. **No founder first names in consumer-facing copy.** Harry and Sheryl Jackman are the recorded founders but are not named in anything a customer reads. The heritage beat runs on the garage, the hand-built origin, and the family's involvement in the return. Use "born in a California garage," "built by hand," "the first Jackman wheels were flame-cut by hand and welded to 3/8-inch outer rims." Keep "with members of the original Jackman family involved" verbatim — that line is what makes the return a continuation rather than a licensing deal. Internal, legal, and fact-check documents may still name them.
+16. **Founder first names appear in exactly one place: the website's Our Story page.** Harry and Sheryl Jackman are named there and nowhere else a customer reads — repeating the names elsewhere is redundant now that Our Story tells that story once. Everywhere outside Our Story: "born in a California garage," "built by hand," "the first Jackman wheels were flame-cut by hand and welded to 3/8-inch outer rims." Keep "with members of the original Jackman family involved" verbatim outside Our Story — that line is what makes the return a continuation rather than a licensing deal. Internal, legal, and fact-check documents may still name them freely.
 
 ## Never
 

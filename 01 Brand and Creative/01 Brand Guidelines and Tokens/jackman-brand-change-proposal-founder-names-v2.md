@@ -1,6 +1,6 @@
 # Brand Change Proposal — Founder Names, Confined to Our Story (v2)
 
-**Proposed by:** Austin Fitzgerald · **Date:** 2026-09-23 · **Status:** awaiting ratification
+**Proposed by:** Austin Fitzgerald · **Date:** 2026-09-23 · **Status:** applied 2026-09-23 (in-repo redlines only — see note below)
 **Classification:** **MAJOR** — amends a standing prohibition; changes what "consumer-facing" means for one specific page.
 **Decision source:** `00 Marketing Command Center/06 Standards and Conventions/jackman-decisions-inbox.md` → `D-05`
 **Supersedes:** `jackman-brand-change-proposal-founder-names-v1.md` (2026-08-26, still unratified). v1 is not withdrawn as a record — its redlines for every channel *other than* Our Story still stand. This version changes exactly one thing: what happens on the Our Story page.
@@ -111,3 +111,11 @@ Apply the two in-repo redlines (guardrail #16, `brand_check.ps1` rule `G16`), fl
 pending, outside this repo), fix the J68 PDP occurrence, then flip `D-05` in the
 decisions inbox from `PROPOSED` to `PROPAGATED` and note that this version (v2) is the
 one that was applied, not v1.
+
+**Applied 2026-09-23.** Both in-repo redlines are live: guardrail #16 (now reads
+"exactly one place: the website's Our Story page") and `brand_check.ps1` rule `G16`
+(downgraded BLOCK → WARN, since a regex can't tell whether a hit is on Our Story). The
+`.claude/skills/chief-of-marketing/SKILL.md` summary was also updated. `D-05` is now
+`PROPAGATED`. **Still outstanding:** the J68 PDP fix itself (this is live-site content,
+not a repo file — needs a separate action), and the `jackman-brand-guidelines` plugin's
+own reference files, unreachable from this session.

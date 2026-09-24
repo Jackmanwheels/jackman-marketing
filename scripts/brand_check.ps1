@@ -53,8 +53,6 @@ $Rules = @(
        M = "Torque value. Write 'torque to your vehicle manufacturer's specification'." }
     @{ L = 'BLOCK'; R = 'G12'; P = '(?i)\blifetime warranty\b(?!.{0,80}(see full terms|terms|limited))'; N = $true
        M = 'Unqualified warranty claim. Approved: "Limited lifetime structural warranty and a five-year finish warranty - see full terms", always linked.' }
-    @{ L = 'BLOCK'; R = 'G16'; P = '(?i)\b(harry|sheryl)\b'; N = $true
-       M = 'Founder first name. Consumer copy keeps the family unnamed. Internal, legal and fact-check documents may still name them.' }
     @{ L = 'BLOCK'; R = 'G15'; P = '(?i)\b(dominates?|dominating|conquers?|conquering|destroys?|annihilates?|tactical|weaponized)\b'; N = $true
        M = 'Militarized register. Prefer built, proven, holds up, keeps going.' }
     @{ L = 'BLOCK'; R = 'G10'; P = "(?i)\b(enhanced bead retention|fixed cap orientation|water relief channels)\s*$TM"; N = $true
@@ -73,8 +71,10 @@ $Rules = @(
        M = "Bare 'Machined'. The finish is Machined As-Cast." }
     @{ L = 'WARN'; R = 'G1'; P = '(?i)\b(copper|polished|chrome)\b'; N = $true
        M = 'Not a Jackman finish name.' }
-    @{ L = 'WARN'; R = 'G4'; P = '(?i)\b(load (rating|capacity)|rated (to|for)|weight rating|max load)\b(?!.{0,45}pending engineering release)'; N = $true
-       M = "Load claim. Spec cells read 'Load rating: pending engineering release'." }
+    @{ L = 'WARN'; R = 'G4'; P = '(?i)\b(load (rating|capacity)|rated (to|for)|weight rating|max load)\b(?!.{0,45}(2650|4500|pending engineering release))'; N = $true
+       M = "Load claim without an approved figure. Approved: 2650 lbs (5-lug/6-lug), 4500 lbs (8-lug). Anything else still reads 'Load rating: pending engineering release'." }
+    @{ L = 'WARN'; R = 'G16'; P = '(?i)\b(harry|sheryl)\b'; N = $true
+       M = 'Founder first name. Approved only on the website Our Story page - anywhere else (social, email, press, dealer, PDP, ads) this should read the unnamed heritage phrasing instead. Internal, legal and fact-check documents may still name them freely.' }
 
     # Only a year in a founding context, or a decade. A bare 2026 is a date, not a claim.
     @{ L = 'WARN'; R = 'G5/D-01'; P = '\b1[89]\d{2}\b'; N = $true

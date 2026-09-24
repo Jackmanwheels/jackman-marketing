@@ -53,10 +53,12 @@ and fill every section concretely — no placeholder text left in the delivered 
 Before finalizing any customer-facing language (email copy, content-idea hooks, website
 direction that includes copy): check it against the `jackman-brand-guidelines` skill's
 guardrails — the same 16 guardrails in `jackman-claude-instructions.md` (finishes,
-Classic 68, six models only, no load rating, no founding date, no invented part number,
-dimension notation, ™ usage, nominative-use disclaimer, no unqualified lifetime
-warranty, contrast, no hex from memory, no militarized language, no founder first
-names) — and run the `humanizer` skill as the last pass on any drafted copy. If a
+Classic 68, six models only, load rating only the confirmed 2650 lbs 5-lug/6-lug or
+4500 lbs 8-lug figure — never a certification claim, no founding date, no invented part
+number, dimension notation, ™ usage, nominative-use disclaimer, no unqualified lifetime
+warranty, contrast, no hex from memory, no militarized language, founder first names
+confined to the website's Our Story page) — and run the `humanizer` skill as the last
+pass on any drafted copy. If a
 content idea is social-post-shaped, note in the brief that it still needs
 `social-review` before it's shot or scheduled.
 
