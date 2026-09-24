@@ -19,14 +19,17 @@ asking about them.
 
 ## 2. Route the file
 
-Per `00 Marketing Command Center/06 Standards and Conventions/jackman-claude-instructions.md`:
+Check the full routing table in `00 Marketing Command Center/06 Standards and
+Conventions/jackman-claude-instructions.md` — it has specific rows for ambassador/athlete
+outreach, dealer material, PR, events, and more, not just the two most common cases:
 - Tied to a specific wheel model/launch → `02 Product Marketing/01 Launch Plans by Model/[Model]`
-- Otherwise → `05 Performance Marketing/01 Campaign Briefs`
+- A more specific row applies (ambassador outreach, dealer comms, PR, event/trade show, etc.) → that row wins over the generic default
+- Otherwise (a general campaign with no more specific row) → `05 Performance Marketing/01 Campaign Briefs`
 
 Name it `jackman-campaign-brief-[subject]-[YYYY-MM-DD]-v1.md` per
 `00 Marketing Command Center/06 Standards and Conventions/jackman-marketing-file-naming-convention.md`.
 State the destination with confidence — only ask if it's genuinely ambiguous between
-brand and product marketing.
+two specific rows (e.g. brand vs. product marketing).
 
 ## 3. Fill the template
 
