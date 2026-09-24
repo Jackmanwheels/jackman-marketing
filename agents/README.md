@@ -23,6 +23,6 @@ them — there's no fixed roadmap for which comes next.
 
 | Agent | Status |
 |---|---|
-| Executive Assistant | Not yet built |
+| [Executive Assistant](executive-assistant/README.md) | Built — owns the daily Portal refresh + decision/task triage |
 
 Update this table as agents are added.
