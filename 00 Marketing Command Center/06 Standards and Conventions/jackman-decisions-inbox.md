@@ -269,6 +269,119 @@ slower. Either way `L-01` and the social profile audit want this settled.
 
 ---
 
+## D-12 — Meta access posture: read-only, or read and publish?
+
+**Question:** When we connect the Facebook Page and Instagram account, do I get
+read-only access (I analyze and recommend, you post and launch), or read plus write
+(I can publish posts and change campaigns directly)?
+
+**ANSWER:** **Read-only to start.** I analyze, report and recommend; you post and
+launch. Revisit after two weeks of data we have proven trustworthy.
+
+**Scopes this authorizes:** `pages_show_list`, `pages_read_engagement`, `read_insights`,
+`instagram_basic`, `instagram_manage_insights`, `business_management`. Explicitly
+**not** `instagram_content_publish`, `pages_manage_posts`, or `ads_management`.
+
+**Status:** `PROPAGATED` — answered 2026-09-17. Runbook 2.3 scope list and Phase 1
+step 5 both already reflect read-only; no other document referenced this.
+
+**Why it blocked:** it decides which permission scopes we request in Phase 2.3, and
+whether the Phase 1 ads connector gets `ads_management`. Adding scopes later means
+re-minting the system user token, so it is cheaper to decide once.
+
+**My recommendation: read-only for the first two weeks, then revisit.** Not caution for
+its own sake — the useful reason is that read-only forces every recommendation through
+you, which is exactly the review loop that catches a bad read of the numbers before it
+becomes a bad post. Once the data is proven trustworthy, publish scope is a ten-minute
+change.
+
+**Worth knowing either way:** organic publishing through the API has real limits. Feed
+images, carousels and Reels work. Stories are restricted, and the API cannot schedule —
+it posts immediately, so any calendar still lives here or in a scheduler.
+
+---
+
+## D-13 — Business Portfolio admin level
+
+**Question:** On the Meta Business Portfolio that owns the Jackman Facebook Page and
+Instagram account, do you have **full control**, or partial/employee access?
+
+**ANSWER:** **Full control / admin.** No blocker — the system user path is clear.
+
+**Status:** `PROPAGATED` — answered 2026-09-17. Phase 0 check 0.4 passes; Phase 2 is
+unblocked end to end.
+
+**Why it blocked:** creating a system user and assigning it assets requires full admin.
+This is the single most common hard stop in this setup, and it fails late — you can get
+five steps in before discovering it.
+
+**If the answer is partial:** we are not stuck, but the path changes. Either someone
+with full control promotes you, or they run steps 2.4 through 2.6 with you in the room
+and you keep the token. Worth finding out before we start clicking.
+
+**Related:** if the portfolio does not exist at all — Page and IG still personal — that
+is Phase 0 work and has to happen first, because tokens minted before the assets are
+claimed stop working once they are.
+
+---
+
+## D-14 — Ad account readiness and official connector eligibility
+
+**Question:** Is there a live ad account inside the portfolio, and does the official
+Meta Ads connector (`https://mcp.facebook.com/ads`) actually work for your account?
+
+**ANSWER:** **Ad account exists, not spending yet.** The best possible timing — we wire
+reporting up before the first dollar goes out instead of reconstructing it afterward.
+
+Connector eligibility is still untested; that gets answered in fifteen minutes of
+trying, at Phase 1.
+
+**Status:** `DECIDED` — answered 2026-09-17. Half of this item (does the account exist)
+is closed; the other half (does the official connector accept us) resolves on first
+attempt and I will record it here.
+
+**Why it matters:** the connector is in **open beta** as of April 2026, so eligibility
+is Meta's call and not something we can force. Fifteen minutes of trying tells us which
+path Phase 1 takes.
+
+- **If it works:** paid is done in one sitting, no code, and Phase 2 stays organic-only.
+- **If it rejects you:** no drama. The Marketing API underneath is the same data, so we
+  add ads tools to the Phase 2 server. Costs about an hour more of build.
+
+**Ties into `project_social-ads-launch`** (decided 2026-09-14, $2–2.5k/mo test across
+three segments). Reporting on that spend is much easier with the connection in place
+before the first dollar goes out, not after.
+
+---
+
+## D-15 — Who drives the browser during setup
+
+**Question:** For the Meta Business Manager and developer dashboard clicking — do you
+drive while I direct, or do I drive in my own browser while you watch?
+
+**ANSWER:** **Austin drives, Claude directs.** Austin clicks through Business Settings
+and the developer dashboard; Claude calls the options and flags the failure points.
+
+**Status:** `PROPAGATED` — answered 2026-09-17. Runbook sequencing reflects this: the
+server gets built first so it is waiting when the token lands.
+
+**Why this was the recommendation.** Two reasons, one of them non-obvious.
+
+The obvious one: these screens involve logging into the account that controls Jackman's
+entire social presence, and the token that comes out is a credential. Your hands on it
+is the right default.
+
+The less obvious one: this setup gets done once and then has to be *maintained* —
+rotated, re-scoped, revoked in a hurry if something goes wrong. If you have clicked
+through it once yourself, Business Settings stops being a place you need me to navigate.
+That is worth the extra twenty minutes.
+
+**I can still help live:** you share what you are seeing, I tell you which option to
+pick and why, and I flag the two checkboxes that are easy to get wrong (token expiry in
+2.5, asset assignment in 2.4).
+
+---
+
 ## Closed and propagated
 
 *Nothing yet. Items move here once status is `PROPAGATED` and the change has held for a

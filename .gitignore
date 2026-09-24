@@ -12,3 +12,6 @@ desktop.ini
 *ogins*.xlsx
 *password*
 *credential*
+
+# Claude CRM is its own separate git repo — excluded from the Marketing repo
+Claude CRM/

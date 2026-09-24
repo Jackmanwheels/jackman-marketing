@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "jackman-meta": {
+      "command": "node",
+      "args": ["C:/Users/AustinFitzgerald/jackman-meta-mcp/src/index.js"],
+      "env": {
+        "META_ACCESS_TOKEN": "${JACKMAN_META_TOKEN}",
+        "JACKMAN_PAGE_ID": "${JACKMAN_PAGE_ID:-}",
+        "JACKMAN_IG_ID": "${JACKMAN_IG_ID:-}"
+      }
+    }
+  }
+}
