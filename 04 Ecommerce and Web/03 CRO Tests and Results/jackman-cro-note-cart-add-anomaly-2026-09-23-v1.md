@@ -74,4 +74,25 @@ warranty in a way that reads as a contradiction. Fix, in order:
 
 ---
 
+## Update — 2026-09-23, later the same day
+
+Austin answered both open questions this raised, in `D-06` and `D-05` of the decisions
+inbox. Revises recommendation #1 above:
+
+- **The load rating does not need to be pulled.** Austin confirmed the figure directly:
+  5-lug/6-lug wheels are rated to 2650 lbs, 8-lug to 4500 lbs — the J68's displayed 2650
+  lbs was already correct, just ahead of the guardrail authorizing it. See
+  `01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-load-ratings-v1.md`
+  (status `PROPOSED`, not yet ratified — the number is confirmed but the guardrail
+  hasn't been formally updated yet).
+- **The founder-names finding still stands, narrowed.** Austin's revised answer allows
+  the names on the website's Our Story page specifically — not on product pages. The
+  Wheel Details occurrence found here is outside Our Story, so recommendation #2 is
+  still the right fix. See
+  `01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-founder-names-v2.md`.
+
+Recommendations #3 (warranty phrasing) and #4 (watch the trend) are unaffected.
+
+---
+
 **FILE →** `04 Ecommerce and Web / 03 CRO Tests and Results` / `jackman-cro-note-cart-add-anomaly-2026-09-23-v1.md`

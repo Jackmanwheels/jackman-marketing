@@ -147,13 +147,27 @@ no handle, because it's the version a searcher finds.
 
 **Question:** Retire "Harry and Sheryl" from consumer-facing copy?
 
-**ANSWER:** Yes — keep the family, unnamed.
+**ANSWER — revised 2026-09-23, supersedes the 2026-08-26 answer below.** Not a full
+retirement. **Founder names stay, but in exactly one place: the website's Our Story
+section.** Naming them again elsewhere — social, email, press, dealer materials, PDPs,
+ads — is redundant now that Our Story tells that story once, canonically. Everywhere
+outside Our Story, the unnamed heritage phrasing (garage, hand-built, "members of the
+original Jackman family involved") still applies exactly as the original proposal
+wrote it.
+
+*Original 2026-08-26 answer, for the record:* "Yes — keep the family, unnamed,"
+everywhere including Our Story. That's the part being revised — everything else about
+the original proposal (the replacement vocabulary for every other channel) stands.
 
 **Status:** `PROPOSED` — see
-`01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-founder-names-v1.md`,
-status *awaiting ratification* since 2026-08-26. **This has been sitting for three
-weeks.** It's already encoded as guardrail #16, so behavior is correct either way — but
-the proposal should be formally ratified or withdrawn rather than left open.
+`01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-founder-names-v2.md`
+(supersedes v1 — the redlines only change what's true for the Our Story page). Status
+stays `PROPOSED` until applied.
+
+**Flag from the CRO agent's 2026-09-23 investigation:** it found "Harry and Sheryl
+Jackman" in the Wheel Details section of the **J68 product page** — that's outside Our
+Story, so this occurrence is likely still a case for the unnamed phrasing, not one this
+revised answer excuses. Worth a look once ratified.
 
 ---
 
@@ -161,12 +175,23 @@ the proposal should be formally ratified or withdrawn rather than left open.
 
 **Question:** When does engineering release load ratings?
 
-**ANSWER:**
+**ANSWER:** **They're already known — no need to wait on engineering.** 5-lug and 6-lug
+wheels are rated to **2650 lbs**. 8-lug wheels are rated to **4500 lbs**. Spec cells can
+state the number for that wheel's lug pattern.
 
-**Status:** `OPEN` — blocked on Clyde Wheeler.
+**This does not lift the certification prohibition.** No JWL / VIA / SAE / TÜV claim —
+Austin confirmed the weight figures, not a certification standard. Those two are
+different claims and guardrail #4 conflated them; the redline separates them.
 
-**Until then:** spec cells read `Load rating: pending engineering release`. No JWL / VIA /
-SAE / TÜV claim. This one is a hard safety-adjacent guardrail — it does not bend.
+**Status:** `PROPOSED` — answered 2026-09-23. Guardrail #4 is a numbered guardrail, so
+per this file's own rule the source isn't edited directly — see
+`01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-load-ratings-v1.md`
+for the redline. Status stays `PROPOSED` until applied.
+
+**Worth knowing:** the J68 Classic 68 (5x5, 5-lug) PDP already shows "Load Rating (lbs):
+2650" — it was live before this was authorized, and it turns out to already be correct.
+No copy fix needed there once this is ratified; the guardrail is catching up to a number
+that was already right.
 
 ---
 
