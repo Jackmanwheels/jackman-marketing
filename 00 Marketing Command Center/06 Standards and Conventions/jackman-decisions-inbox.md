@@ -169,10 +169,16 @@ plugin's own reference files, and v1's redline list of live copy needing re-issu
 (boilerplates, pitches, press template, dealer materials) — none of that is in this
 repo's reach.
 
-**Still open, not excused by this decision:** the CRO agent's 2026-09-23 investigation
-found "Harry and Sheryl Jackman" in the Wheel Details section of the **J68 product
-page** — that's outside Our Story, so it still needs the unnamed phrasing. Not yet
-fixed on the live site.
+**Resolved 2026-09-23 — leave the J68 occurrence as-is.** The CRO agent's investigation
+found "Harry and Sheryl Jackman" in the Wheel Details section of the J68 product page
+and flagged it as outside Our Story. Austin's call: leave it. That passage **links back
+to Our Story** rather than re-telling the story standalone, and the specific fact it's
+carrying — the Classic 68 is a spin-off of the original wheel Harry and Sheryl built —
+is model-provenance, not a repeated heritage beat. **Refined rule for future review:**
+guardrail #16's "exactly one place" means the names aren't re-told as their own heritage
+narrative outside Our Story — a page that names them once, in service of a specific
+fact (this model's direct lineage), and links to Our Story rather than repeating it, is
+the intended exception, not a violation.
 
 ---
 

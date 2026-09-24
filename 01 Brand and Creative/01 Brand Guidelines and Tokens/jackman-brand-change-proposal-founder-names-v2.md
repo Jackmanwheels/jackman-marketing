@@ -36,15 +36,19 @@ this isn't a reversion to that. It's narrower — one canonical placement, not o
 
 ---
 
-## A live finding this directly affects
+## A live finding this directly affects — resolved, leave as-is
 
 The CRO agent's 2026-09-23 investigation found "Harry and Sheryl Jackman" in the **Wheel
-Details section of the J68 product page** — not Our Story. Under this revised answer,
-**that occurrence is still out of place** and should move to the unnamed phrasing (v1's
-replacement vocabulary), the same as it would have been under v1. Confirm this is the
-only non-Our-Story occurrence before treating the site as compliant — a search for
-"Harry" and "Sheryl" across the live site's product and collection templates is worth
-doing once this is ratified.
+Details section of the J68 product page** — not Our Story. Initially flagged as out of
+place under this decision. **Austin's call, same day: leave it.** That passage links
+back to Our Story rather than re-telling the heritage story standalone, and the fact
+it's carrying is model provenance — the Classic 68 is a spin-off of the original wheel
+Harry and Sheryl built — not a repeated heritage beat. This is the exception now written
+into guardrail #16 directly: a page may name them once, briefly, in service of a
+specific non-heritage fact, provided it points back to Our Story rather than retelling
+it. Worth a one-time check of other product/collection templates for the *pattern*
+(bare re-telling of the full heritage story, not a lineage reference) — that's still out
+of place if found.
 
 ---
 
@@ -55,8 +59,13 @@ doing once this is ratified.
 **Current**
 > 16. **No founder first names in consumer-facing copy.** Harry and Sheryl Jackman are the recorded founders but are not named in anything a customer reads. The heritage beat runs on the garage, the hand-built origin, and the family's involvement in the return. Use "born in a California garage," "built by hand," "the first Jackman wheels were flame-cut by hand and welded to 3/8-inch outer rims." Keep "with members of the original Jackman family involved" verbatim — that line is what makes the return a continuation rather than a licensing deal. Internal, legal, and fact-check documents may still name them.
 
-**Replacement**
+**Replacement (as first applied, 2026-09-23 morning)**
 > 16. **Founder first names appear in exactly one place: the website's Our Story page.** Harry and Sheryl Jackman are named there and nowhere else a customer reads — repeating the names elsewhere is redundant now that Our Story tells that story once. Everywhere outside Our Story: "born in a California garage," "built by hand," "the first Jackman wheels were flame-cut by hand and welded to 3/8-inch outer rims." Keep "with members of the original Jackman family involved" verbatim outside Our Story — that line is what makes the return a continuation rather than a licensing deal. Internal, legal, and fact-check documents may still name them freely.
+
+**Amended same day, after the J68 finding below.** The first pass didn't account for a
+page naming them once in service of a specific fact (like model lineage) rather than
+retelling the heritage story. Live text now reads:
+> 16. **Founder first names live in exactly one place: the website's Our Story page — as its own heritage narrative.** Harry and Sheryl Jackman are named there; retelling that same heritage narrative elsewhere is redundant now that Our Story carries it once. The exception: a page may name them once, briefly, in service of a specific fact that isn't the heritage narrative itself — e.g. a model page noting it's a direct spin-off of the original Harry-and-Sheryl-built wheel — provided it links or points back to Our Story rather than re-telling the story standalone. Everywhere else: "born in a California garage," "built by hand," "the first Jackman wheels were flame-cut by hand and welded to 3/8-inch outer rims." Keep "with members of the original Jackman family involved" verbatim outside Our Story — that line is what makes the return a continuation rather than a licensing deal. Internal, legal, and fact-check documents may still name them freely.
 
 ### 2. `scripts/brand_check.ps1` — lines 56–57 (rule `G16`, currently BLOCK)
 
@@ -94,10 +103,11 @@ Our Story is the one place the names now stay, unedited.
 
 ## What needs re-issuing
 
-- **The J68 product page's Wheel Details section** — the CRO agent's finding above.
-  Move to the unnamed phrasing; this is outside Our Story.
-- A one-time check of other product/collection templates for the same pattern, since if
-  it happened once via a shared template it may have happened elsewhere too.
+- ~~The J68 product page's Wheel Details section~~ — **resolved, leave as-is** (see
+  above). Not a re-issue item.
+- A one-time check of other product/collection templates for a *bare retelling* of the
+  full heritage story (not a brief lineage reference linking back to Our Story) — that
+  pattern is still out of place if found.
 - Everything on v1's original list **except Our Story**: approved boilerplates, elevator
   pitches, press release template, dealer talk track and one-pager, any deck or sell
   sheet with a founders section.
@@ -112,10 +122,10 @@ pending, outside this repo), fix the J68 PDP occurrence, then flip `D-05` in the
 decisions inbox from `PROPOSED` to `PROPAGATED` and note that this version (v2) is the
 one that was applied, not v1.
 
-**Applied 2026-09-23.** Both in-repo redlines are live: guardrail #16 (now reads
-"exactly one place: the website's Our Story page") and `brand_check.ps1` rule `G16`
-(downgraded BLOCK → WARN, since a regex can't tell whether a hit is on Our Story). The
-`.claude/skills/chief-of-marketing/SKILL.md` summary was also updated. `D-05` is now
-`PROPAGATED`. **Still outstanding:** the J68 PDP fix itself (this is live-site content,
-not a repo file — needs a separate action), and the `jackman-brand-guidelines` plugin's
-own reference files, unreachable from this session.
+**Applied 2026-09-23, amended same day.** Both in-repo redlines are live: guardrail #16
+(amended version, with the lineage-reference exception) and `brand_check.ps1` rule `G16`
+(downgraded BLOCK → WARN, since a regex can't tell whether a hit is on Our Story or a
+covered exception). The `.claude/skills/chief-of-marketing/SKILL.md` summary was also
+updated. `D-05` is `PROPAGATED`. **The J68 PDP needs no fix** — Austin confirmed that
+occurrence is the intended exception, not a violation. **Still outstanding:** the
+`jackman-brand-guidelines` plugin's own reference files, unreachable from this session.

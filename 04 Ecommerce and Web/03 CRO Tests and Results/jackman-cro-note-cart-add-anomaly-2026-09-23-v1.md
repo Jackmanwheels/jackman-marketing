@@ -81,14 +81,14 @@ inbox. Revises recommendation #1 above:
 
 - **The load rating does not need to be pulled.** Austin confirmed the figure directly:
   5-lug/6-lug wheels are rated to 2650 lbs, 8-lug to 4500 lbs — the J68's displayed 2650
-  lbs was already correct, just ahead of the guardrail authorizing it. See
-  `01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-load-ratings-v1.md`
-  (status `PROPOSED`, not yet ratified — the number is confirmed but the guardrail
-  hasn't been formally updated yet).
-- **The founder-names finding still stands, narrowed.** Austin's revised answer allows
-  the names on the website's Our Story page specifically — not on product pages. The
-  Wheel Details occurrence found here is outside Our Story, so recommendation #2 is
-  still the right fix. See
+  lbs was already correct, just ahead of the guardrail authorizing it. Guardrail #4 has
+  since been updated to match — ratified and applied 2026-09-23. See
+  `01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-load-ratings-v1.md`.
+- **The founder-names finding needs no fix, on reflection.** Austin's call: that passage
+  links back to Our Story rather than re-telling the heritage story on its own, and it's
+  carrying a specific fact (the Classic 68 is a spin-off of the original Harry-and-Sheryl
+  wheel) rather than the heritage narrative itself. Guardrail #16 now codifies this as
+  the intended exception, not a violation. Recommendation #2 above is withdrawn. See
   `01 Brand and Creative/01 Brand Guidelines and Tokens/jackman-brand-change-proposal-founder-names-v2.md`.
 
 Recommendations #3 (warranty phrasing) and #4 (watch the trend) are unaffected.
