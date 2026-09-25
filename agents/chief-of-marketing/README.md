@@ -44,9 +44,13 @@ header → content → build notes → rationale → `FILE →` shape).
 
 ## What's next
 
-Website, SEO, and Email specialist agents still get built under the COM one at a time,
-as Austin decides. First specialist built: the
-**[Content agent](../content-agent/README.md)** — drafts blog posts, social captions,
-and scripts against the Blog Roadmap or a COM brief's Content Ideas section, so the COM
-no longer has to do that drafting itself. See [`../README.md`](../README.md) for the
-full roster.
+SEO and Email specialist agents still get built under the COM one at a time, as Austin
+decides. Two specialists built so far:
+- **[Content agent](../content-agent/README.md)** — drafts blog posts, social captions,
+  and scripts against the Blog Roadmap or a COM brief's Content Ideas section.
+- **[Website agent](../website-agent/README.md)** — drafts landing page and PDP copy
+  against a COM brief's Website Layout Direction section (or a CRO note's fix
+  recommendation).
+
+The COM no longer has to do either kind of drafting itself. See
+[`../README.md`](../README.md) for the full roster.

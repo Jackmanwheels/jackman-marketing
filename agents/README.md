@@ -13,6 +13,7 @@ agents/
     cro-agent/            ↳ specialist under the EA, funnel diagnosis
   chief-of-marketing/    ← lead agent, campaigns & creative
     content-agent/        ↳ specialist under the COM, drafts blog/social/scripts
+    website-agent/        ↳ specialist under the COM, drafts landing/PDP copy
   <next-agent>/          ← added when we get to it
 ```
 
@@ -29,14 +30,15 @@ There are two leads, each owning a different domain, both reporting directly to 
   **[CRO agent](cro-agent/README.md)** — diagnoses conversion/funnel problems on the
   live site.
 - **[Chief of Marketing](chief-of-marketing/README.md)** — campaigns and creative
-  direction: turns an idea into a full brief. First specialist: the
-  **[Content agent](content-agent/README.md)** — drafts blog posts, social captions,
-  and scripts against the Blog Roadmap or a COM brief.
+  direction: turns an idea into a full brief. Specialists: the
+  **[Content agent](content-agent/README.md)** (drafts blog posts, social captions, and
+  scripts) and the **[Website agent](website-agent/README.md)** (drafts landing page
+  and PDP copy).
 
 Future specialist agents get added underneath whichever lead would actually task or use
-them — diagnostic/ops agents under the EA (like the CRO agent), and Website, SEO, and
-Email agents under the Chief of Marketing (Content is already built). Built one at a
-time, as Austin decides — there's no fixed roadmap for which comes next.
+them — diagnostic/ops agents under the EA (like the CRO agent), and SEO and Email agents
+still remaining under the Chief of Marketing. Built one at a time, as Austin decides —
+there's no fixed roadmap for which comes next.
 
 ## Status
 
@@ -46,5 +48,6 @@ time, as Austin decides — there's no fixed roadmap for which comes next.
 | [Chief of Marketing](chief-of-marketing/README.md) | — (lead) | Built — turns a campaign idea into a website/SEO/email/content brief |
 | [CRO agent](cro-agent/README.md) | Executive Assistant | Built — diagnoses conversion/funnel problems, live-site testing included |
 | [Content agent](content-agent/README.md) | Chief of Marketing | Built — drafts blog posts, social captions, and scripts |
+| [Website agent](website-agent/README.md) | Chief of Marketing | Built — drafts landing page and PDP copy, draft-to-file only |
 
 Update this table as agents are added.
