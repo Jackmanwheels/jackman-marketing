@@ -120,6 +120,10 @@ every day it stays broken, and most of it takes under an hour.
       now the `sameAs` array for `W-02`, so that item just got easier; (b) tag the links
       with UTMs (`?utm_source=site&utm_medium=social-icon`) or the traffic they send
       will land in the monthly report as direct and we'll never see the payoff.
+      **Verified live 25 Sep 2026 by the SEO agent:** links are still there (Facebook,
+      Twitter/X, Instagram, YouTube, TikTok in the footer). The UTM half of (b) was never
+      done — none of the five links carry a `utm_source`. Split out as `W-10` below so it
+      doesn't stay buried inside a checked-off item.
 - [ ] **W-02 — Populate Organization schema.** Verified live 15 Sep 2026 — it still
       carries only `name` and `url`, nothing else:
       `{"@type":"Organization","name":"Jackman Wheels","url":"https://jackmanwheels.com"}`
@@ -155,13 +159,25 @@ every day it stays broken, and most of it takes under an hour.
 
       **`sameAs` can ship today** — it doesn't depend on the address. Split this into two
       passes rather than holding the whole thing for `B-02`. · *Effort: 20 min, dev*
+      **Verified still open, 25 Sep 2026 by the SEO agent:** pulled the live JSON-LD from
+      the homepage directly — it's unchanged since 15 Sep, still just
+      `{"@type":"Organization","name":"Jackman Wheels","url":"https://jackmanwheels.com"}`.
+      The full block above is ready to paste as-is; nothing new is blocking it.
 - [ ] **W-03 — Audit the seven duplicate collections.** `17-inch`, `18-inch`, `5-lug`,
       `6-lug`, `chevy-gmc`, `ford-truck` and `all-jackman-wheels` each return the same
       13 wheels. Google sees seven near-duplicate category pages; a shopper sees a
       filter that does nothing. Fix the tagging so each returns a genuinely different
       set, or consolidate and canonicalize. · *Effort: 3h*
+      **Verified still open, 25 Sep 2026 by the SEO agent:** checked `/collections/17-inch-wheels`
+      directly — same 13 products as `/collections/all-jackman-wheels`, just reordered.
+      Didn't re-check the other six individually, but there's no reason to expect they've
+      changed. This is a merchandising/tagging decision (fix the filters vs. consolidate
+      and canonicalize), not a copy fix — needs Austin's call on approach before anyone
+      drafts anything.
 - [ ] **W-04 — Kill or fill `/collections/accessories`.** Zero products, live, in the
       sitemap. Populate it or noindex it. · *Effort: 15 min*
+      **Verified still open, 25 Sep 2026 by the SEO agent:** still live, still "Coming
+      Soon," no products, no `noindex` meta tag — fully indexable as-is.
 
 ### Profile
 
@@ -226,9 +242,17 @@ output starts.
       collection while the homepage title tag reads "Built for Trucks, Jeeps" — a
       relevance mismatch Google will notice. **Highest-traffic opportunity on the
       site.** · *Effort: 2 days*
+      **Verified still open, 25 Sep 2026 by the SEO agent:** checked `/collections/jeep-wrangler-wheels`
+      and `/collections/toyota-tacoma-wheels` directly — both 404. None of the four exist
+      yet. This needs full new page copy, not a metadata fix — handed to the Website
+      agent (structure/build notes) and Content agent (fitment copy) rather than drafted
+      in the SEO audit.
 - [ ] **W-06 — Fix the product H1s.** J69's H1 reads "J69 | Matte Bronze" while the
       title tag reads "J69 Bronze Truck Wheel 17-inch and 18-inch." Bring the H1 in line
       so the page's strongest on-page signal carries the keywords. · *Effort: 1h*
+      **Verified still open, 25 Sep 2026 by the SEO agent:** confirmed live — H1 is still
+      exactly "J69 | Matte Bronze" against the title tag's "J69 Bronze Truck Wheel 17\" &
+      18\"." Corrected H1 drafted in `04 Ecommerce and Web/04 SEO/jackman-seo-audit-full-site-2026-09-25-v1.md`.
 
 ---
 
@@ -253,13 +277,40 @@ until it feels urgent.
       delivery.** ProductGroup schema is present but there's no AggregateRating, because
       there are no reviews. Star ratings in search results lift click-through
       meaningfully. · *Effort: 4h setup*
+      **Verified still open, 25 Sep 2026 by the SEO agent:** pulled the live ProductGroup
+      JSON-LD for J69 — confirmed present, confirmed no `aggregateRating` field. This one
+      needs an app installed, not a copy fix — outside what any drafting agent can do.
 - [ ] **W-08 — Rewrite image alt text across the catalog.** On the J69 page alone, 15
       images carry alt text that is just the product name repeated and 10 have an empty
       alt attribute. Rewrite with vehicle and fitment context — it feeds Google Images, a
       real traffic source for wheels. · *Effort: 1 day*
-- [ ] **W-09 — Publish an HTML fitment/spec table per wheel model** — every size, bolt
+      **Verified still open, 25 Sep 2026 by the SEO agent:** confirmed live on J69 — eight
+      product images alt-texted only as "J69 | Matte Bronze" (repeated), plus several
+      lifestyle and safety images with empty `alt=""`. Sample corrected alt text drafted
+      in the audit file below; rewriting the full catalog is still the 1-day job the
+      estimate already called for.
+- [x] **W-09 — Publish an HTML fitment/spec table per wheel model** — every size, bolt
       pattern, offset, backspacing, load rating. Crawlable spec tables rank for long-tail
       searches nobody else targets. · *Effort: 1 day*
+      ✅ **Verified DONE 25 Sep 2026 by the SEO agent — nobody had checked this off.**
+      Confirmed a full HTML spec table (part number, diameter, width, bolt pattern,
+      offset, hub bore, back spacing, weight, load rating) live on both the J68 and J69
+      PDPs. It's the shared product template, so this is already true catalog-wide, not
+      just on the two pages checked. One follow-on worth a look: now that load ratings
+      are confirmed and sayable (`D-06`), the table's "Load Rating" cell should read the
+      real number for every product's lug pattern — spot-checked J68 and J69 (both 5-lug,
+      both correctly showing 2650 lbs) but the 8-lug models weren't checked this pass.
+- [ ] **W-10 — Tag the header/footer social links with UTMs.** Split out of `W-01` —
+      the links themselves shipped 15 Sep, the tagging never did. Without
+      `?utm_source=site&utm_medium=social-icon`, that traffic reports as direct and the
+      payoff from `W-01` is invisible in the monthly numbers. · *Effort: 15 min* ·
+      *Found by the SEO agent, 25 Sep 2026*
+- [ ] **W-11 — Fix the "5-Year Limited Lifetime Warranty" line on every PDP.** A specific
+      term length combined with "Lifetime" reads as self-contradictory, and it's not
+      visibly linked to terms — guardrail #12 requires unqualified lifetime-warranty
+      language to link out. It's in the shared product template, so one fix covers the
+      whole catalog. · *Effort: 30 min* · *Found by the SEO agent, 25 Sep 2026, while
+      auditing J68 and J69 — confirmed present on both, so almost certainly template-wide*
 - [ ] **L-01 — Claim and fully complete the Google Business Profile** — categories,
       hours, photos, products, and a post every week. **Unblocked 15 Sep 2026.** Use the
       canonical NAP exactly: `Jackman Wheels` / `15500 Cornet St.` /
@@ -384,7 +435,7 @@ spotlights · `C-09` trial reels · `C-10` blog cadence · `C-11` micro-creators
 
 `W-01` social links ✅ · `W-02` org schema · `W-03` duplicate collections · `W-04`
 accessories page · `W-05` fitment pages · `W-06` H1s · `W-07` reviews · `W-08` alt text ·
-`W-09` spec tables
+`W-09` spec tables ✅ · `W-10` social link UTMs · `W-11` warranty line fix
 
 `L-01` GBP · `L-02` dealer locator · `L-03` where to buy · `L-04` directories · `L-05`
 media pitch
