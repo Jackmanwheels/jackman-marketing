@@ -15,6 +15,7 @@ agents/
     content-agent/        ↳ specialist under the COM, drafts blog/social/scripts
     website-agent/        ↳ specialist under the COM, drafts landing/PDP copy
     email-agent/          ↳ specialist under the COM, drafts Klaviyo campaigns/flows
+    seo-agent/            ↳ specialist under the COM, audits the live site directly
   <next-agent>/          ← added when we get to it
 ```
 
@@ -34,13 +35,14 @@ There are two leads, each owning a different domain, both reporting directly to 
   direction: turns an idea into a full brief. Specialists: the
   **[Content agent](content-agent/README.md)** (drafts blog posts, social captions, and
   scripts), the **[Website agent](website-agent/README.md)** (drafts landing page and
-  PDP copy), and the **[Email agent](email-agent/README.md)** (drafts Klaviyo campaigns
-  and flows).
+  PDP copy), the **[Email agent](email-agent/README.md)** (drafts Klaviyo campaigns and
+  flows), and the **[SEO agent](seo-agent/README.md)** (audits the live site directly and
+  owns the SEO checklist's accuracy).
 
-Future specialist agents get added underneath whichever lead would actually task or use
-them — diagnostic/ops agents under the EA (like the CRO agent), and SEO still remaining
-under the Chief of Marketing. Built one at a time, as Austin decides — there's no fixed
-roadmap for which comes next.
+All four specialists originally named for the Chief of Marketing (Website, SEO, Email,
+Content) are now built. Future specialist agents get added underneath whichever lead
+would actually task or use them — the EA is the more likely home for what comes next,
+since its side only has one specialist (the CRO agent) so far.
 
 ## Status
 
@@ -52,5 +54,6 @@ roadmap for which comes next.
 | [Content agent](content-agent/README.md) | Chief of Marketing | Built — drafts blog posts, social captions, and scripts |
 | [Website agent](website-agent/README.md) | Chief of Marketing | Built — drafts landing page and PDP copy, draft-to-file only |
 | [Email agent](email-agent/README.md) | Chief of Marketing | Built — drafts Klaviyo campaign and flow emails, draft-to-file only |
+| [SEO agent](seo-agent/README.md) | Chief of Marketing | Built — audits the live site directly, owns the SEO checklist's accuracy |
 
 Update this table as agents are added.

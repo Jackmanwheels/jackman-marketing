@@ -44,8 +44,7 @@ header → content → build notes → rationale → `FILE →` shape).
 
 ## What's next
 
-SEO is the one remaining specialist named for the COM, to be built when Austin decides.
-Three specialists built so far:
+All four specialists originally named for the COM now exist:
 - **[Content agent](../content-agent/README.md)** — drafts blog posts, social captions,
   and scripts against the Blog Roadmap or a COM brief's Content Ideas section.
 - **[Website agent](../website-agent/README.md)** — drafts landing page and PDP copy
@@ -53,6 +52,9 @@ Three specialists built so far:
   recommendation).
 - **[Email agent](../email-agent/README.md)** — drafts Klaviyo campaign and flow emails
   against a COM brief's Email Marketing section or an EA-flagged dormancy problem.
+- **[SEO agent](../seo-agent/README.md)** — the most capable specialist so far: audits
+  the live site directly rather than only drafting from a brief, and owns the standing
+  SEO checklist's accuracy.
 
-The COM no longer has to do any of that drafting itself. See
+The COM no longer has to do any of that work itself. See
 [`../README.md`](../README.md) for the full roster.
