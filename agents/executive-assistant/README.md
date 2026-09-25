@@ -40,5 +40,10 @@ it.
 
 ## What's next
 
-Specialist agents get added under `agents/` one at a time, as Austin decides to build
-them — see [`../README.md`](../README.md) for the roster.
+Two specialists built so far:
+- **[CRO agent](../cro-agent/README.md)** — diagnoses conversion/funnel problems,
+  live-site testing included.
+- **[Reporting agent](../reporting-agent/README.md)** — files the five-number monthly
+  performance report the operating guide calls for, on a schedule.
+
+See [`../README.md`](../README.md) for the full roster.
