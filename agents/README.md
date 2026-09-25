@@ -14,6 +14,7 @@ agents/
   chief-of-marketing/    ← lead agent, campaigns & creative
     content-agent/        ↳ specialist under the COM, drafts blog/social/scripts
     website-agent/        ↳ specialist under the COM, drafts landing/PDP copy
+    email-agent/          ↳ specialist under the COM, drafts Klaviyo campaigns/flows
   <next-agent>/          ← added when we get to it
 ```
 
@@ -32,13 +33,14 @@ There are two leads, each owning a different domain, both reporting directly to 
 - **[Chief of Marketing](chief-of-marketing/README.md)** — campaigns and creative
   direction: turns an idea into a full brief. Specialists: the
   **[Content agent](content-agent/README.md)** (drafts blog posts, social captions, and
-  scripts) and the **[Website agent](website-agent/README.md)** (drafts landing page
-  and PDP copy).
+  scripts), the **[Website agent](website-agent/README.md)** (drafts landing page and
+  PDP copy), and the **[Email agent](email-agent/README.md)** (drafts Klaviyo campaigns
+  and flows).
 
 Future specialist agents get added underneath whichever lead would actually task or use
-them — diagnostic/ops agents under the EA (like the CRO agent), and SEO and Email agents
-still remaining under the Chief of Marketing. Built one at a time, as Austin decides —
-there's no fixed roadmap for which comes next.
+them — diagnostic/ops agents under the EA (like the CRO agent), and SEO still remaining
+under the Chief of Marketing. Built one at a time, as Austin decides — there's no fixed
+roadmap for which comes next.
 
 ## Status
 
@@ -49,5 +51,6 @@ there's no fixed roadmap for which comes next.
 | [CRO agent](cro-agent/README.md) | Executive Assistant | Built — diagnoses conversion/funnel problems, live-site testing included |
 | [Content agent](content-agent/README.md) | Chief of Marketing | Built — drafts blog posts, social captions, and scripts |
 | [Website agent](website-agent/README.md) | Chief of Marketing | Built — drafts landing page and PDP copy, draft-to-file only |
+| [Email agent](email-agent/README.md) | Chief of Marketing | Built — drafts Klaviyo campaign and flow emails, draft-to-file only |
 
 Update this table as agents are added.
