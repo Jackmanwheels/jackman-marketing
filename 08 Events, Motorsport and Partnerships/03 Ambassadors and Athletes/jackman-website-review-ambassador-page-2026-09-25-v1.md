@@ -43,25 +43,26 @@
    "Ambassador Applicants" list. Worth confirming this is actually wired up rather than
    just landing in a generic contact-form inbox.
 
-## Open question, not a gap
+## Resolved 2026-09-25 — open call now, tiers later
 
-The brief's Flagship-tier idea was about direct outreach to one hero pilot per segment
-(from the existing prospect sheet, prioritizing Off-Road Expo attendees) — not
-necessarily something this form needs to handle. If Austin's plan is: **this page runs
-the broad Crew-tier open call, while Flagship pilots get recruited by direct
-outreach/DM**, then the missing tiers/segments on the page might be correct as-is, and
-only the Expo tie-in is a real gap. Worth confirming which model this page is meant to
-serve before treating "no tiers" as something to fix.
+Austin's call: run the page as the open call it already is; tiers (Crew/Builder/
+Flagship) and the platform-segment framing are a **Phase 2**, to be built once the
+program has an initial wave of applicants to sort into them — not before. So the "no
+tiers" gap noted below was never a defect in the live page; it's just not built yet by
+design. The Off-Road Expo tie-in (drafted below) is the only change needed on the page
+right now.
+
+**Not yet decided, worth a task when it's time:** how the Flagship pilots (one hero per
+platform segment) get recruited once tiers exist — direct outreach from the prospect
+sheet versus sorting them out of the open-call applicant pool. Revisit after the expo,
+once there's real application data to look at.
 
 ## Recommendation
 
-Before the expo (8 days out): add a line or section referencing Off-Road Expo — even a
-single sentence ("we're scouting our first ambassador class at Off-Road Expo, Oct 3–4 —
-stop by the booth") turns this from a standing page into something worth mentioning at
-the show. Confirm the Klaviyo wiring. Tiers and the segment grid can reasonably wait
-until after the expo's first wave of applicants, per the brief's own sequencing — but
-worth a direct answer from Austin on which model (open call vs. tiered) this page is
-actually running, so the next version matches on purpose rather than by default.
+Before the expo (8 days out): add the Off-Road Expo copy below. Confirm the Klaviyo
+wiring separately — still unconfirmed, not blocking the copy addition. Tiers and the
+segment grid are Phase 2, per the resolution above — nothing else needed on this page
+before the show.
 
 ---
 

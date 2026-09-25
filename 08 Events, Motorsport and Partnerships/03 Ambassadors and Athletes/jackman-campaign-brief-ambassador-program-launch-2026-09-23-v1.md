@@ -8,8 +8,20 @@ follower range) plus a small number of flagship per-segment hero vehicles as pil
 **Target date:** Scouting at Off-Road Expo, Oct 3–4, 2026 (OC Fair & Event Center, Costa
 Mesa). Program landing page + application flow live by **Oct 13, 2026** (one week after
 the show, to convert expo contacts while they're still warm).
-**Status:** Draft
+**Status:** Draft — sequencing updated 2026-09-25 (see note below)
 **Version:** v1
+
+---
+
+**Update 2026-09-25.** A landing page already existed at
+`jackmanwheels.com/pages/ambassadors` — the Website agent reviewed it against this brief
+(`jackman-website-review-ambassador-page-2026-09-25-v1.md`, same folder). Austin's
+call: **run it as the open call it already is now; the Crew/Builder/Flagship tiers and
+the platform-segment framing become a Phase 2**, built once the program has an initial
+wave of applicants to actually sort into tiers — not before the expo. The proposed tier
+structure and segment list below stand as the Phase 2 design; they just aren't what's
+live today. Only change made to the live page before the show: an Off-Road Expo
+tie-in, drafted in the same review file.
 
 ---
 
