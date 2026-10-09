@@ -99,7 +99,7 @@ These are the rules that cause real damage:
 2. **Classic 68 in all copy.** `j68` is filenames only. Zero instances of "J68" in anything a customer or dealer reads.
 3. **Only six models exist:** Classic 68 and J69–J73. Never invent J74 or beyond.
 4. **Load rating is confirmed and sayable — by lug pattern.** 5-lug and 6-lug: **2650 lbs**. 8-lug: **4500 lbs**. Still no JWL / VIA / SAE / TÜV certification claim — a load-rating number and a certification are different claims, and only the number is confirmed. If a lug pattern outside these two doesn't have a released figure, the cell reads `Load rating: pending engineering release` — this only lifts the prohibition for 5-lug, 6-lug, and 8-lug.
-5. **No founding decade or year.** The founding date is unresolved. Use "California-born."
+5. **Founding date is 1968.** Approved forms: "Established 1968" and "Est. 1968." Never 1967, 1969, "the late sixties," or "the 1960s" — the year is specific now, so vagueness reads as uncertainty. "California-born" remains a correct phrase but is no longer a substitute for the date. The Our Story mid-1970s passage describes a later chapter, not the founding. Ratified 2026-10-06 per `D-01`.
 6. **No torque value from memory.** Write "torque to your vehicle manufacturer's specification."
 7. **Never construct a part number.** Transcribe from a source list or leave it out. The SKU encoding is unconfirmed.
 8. **Dimensions:** `17x9` · `6x139.7 / 6x5.5"` (dual notation always) · `+18mm` (sign never optional) · `4.75"` backspacing · `106.1mm` bore, never rounded.

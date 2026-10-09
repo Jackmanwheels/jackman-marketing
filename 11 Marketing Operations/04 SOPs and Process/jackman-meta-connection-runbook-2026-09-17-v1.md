@@ -1,11 +1,13 @@
 # Jackman Marketing — Meta Connection Runbook (Facebook + Instagram → Claude)
 
 **Owner:** Austin Fitzgerald · **Version:** v1 · **Date:** 2026-09-17
-**Status:** Decisions D-12/13/15 answered 2026-09-17 · server **built and tested** ·
-blocked only on the Meta-side clicking (Phase 0 and steps 2.1–2.6)
+**Status: COMPLETE — connected and verified 2026-10-08.** Both halves live. Phases 0–4
+all done, including the scheduled daily snapshot. Remaining items are housekeeping, at
+the bottom of this document.
 
-**Settled:** read-only access · Austin has full portfolio admin · ad account exists but
-is not spending · Austin drives the browser, Claude directs.
+**Verified live:** Instagram `@jackmanwheels` 946 followers · Facebook Page
+`1139927732536365` 34 followers · official ads connector working · 20 metrics confirmed
+live · first history row written 2026-10-08.
 **Related:** `project_social-ads-launch`, `project_jackman-marketing-portal`,
 `03 Content and Social / jackman-social-strategy-2026-09-15-v2.md`
 
@@ -71,12 +73,20 @@ sit with you for steps 2.1 through 2.6. This is the most common hard block.
 
 ### 0.6 Connect the *right* Facebook page — you have two
 
+> **Resolved 2026-10-08.** The live page is **`1139927732536365`** — confirmed by
+> `meta_whoami`, which returned it as the only page carrying the Instagram account.
+> The IDs below are kept because `D-02` and `D-11` still quote them, but see 2.6a:
+> they are **URL/profile IDs, not Graph page IDs**, and searching them in Business
+> Manager returns nothing.
+
 Per `D-11` in the decisions inbox, there are two Jackman pages:
 
-| Page ID | State | Use it? |
+| Page ID | Namespace | State |
 |---|---|---|
-| `61590115023694` | Live, linked from the website, posting actively | **Yes — this is the one** |
-| `61560110244171` | Dark, previously listed the wrong Austin TX address | No — unresolved, see `D-11` |
+| **`1139927732536365`** | Graph | **The live one.** Has the IG account attached. Use this |
+| `1154414221086645` | Graph | The other one. Returned nothing from `/me/accounts` |
+| `61590115023694` | URL/profile | What `D-02` calls the live page — wrong namespace |
+| `61560110244171` | URL/profile | What `D-11` calls the dark duplicate — wrong namespace |
 
 Connecting the wrong one gives us a clean-looking pipeline reporting on a dead page, and
 that error is nearly invisible once numbers start flowing. Verify the ID before the
@@ -138,17 +148,64 @@ machine and the token never leaves it.
 
 ### 2.1 Create a Meta developer app
 
-1. `developers.facebook.com` → **My Apps → Create App**
-2. Use case: **Other** → Type: **Business**
-3. Name: `Jackman Marketing Internal` — this name shows up in audit logs, so make it
-   obvious what it is a year from now.
-4. **Attach the Jackman business portfolio.** Not "no business portfolio." A detached
-   app cannot use system user tokens, which is the whole plan.
+> **Rewritten 2026-10-08, from doing it.** Meta replaced the app creation wizard, and
+> the original instruction here — "Use case: Other → Type: Business" — is now the wrong
+> answer. Corrected below, along with the three things that went wrong on the way.
+
+**Getting to the wizard at all.** Three failures in sequence, each with a different fix:
+
+1. `developers.facebook.com/apps` **redirects to Business Manager**
+   (`business.facebook.com/apps/advertising_settings?business_id=…&global_scope_id=…`).
+   The `global_scope_id` is the tell: you are in a business-scoped session and the
+   developer destination is never honoured.
+2. Going direct to `developers.facebook.com/apps/creation/` returns **"Sorry, this
+   content isn't available right now."** Same text Facebook uses for the dark duplicate
+   Page in `D-11` — it is the generic permission-denied page, not an expired link.
+3. **What works:** a private/incognito window, logged into `facebook.com` directly
+   (*not* `business.facebook.com`), then the creation URL.
+
+**Stay in that incognito window for all of Phase 2.** Returning to the normal browser
+reintroduces the business-scoped session, and Business Manager needs a fresh login in
+the incognito window for step 2.4.
+
+If incognito still fails, the next suspect is developer registration — separate from
+Business Manager admin, and not granted by it. `developers.facebook.com` → **Get
+started**, top right. Free, instant, no review.
+
+**The wizard: App details → Use cases → Business → Requirements → Overview**
+
+| Step | Answer |
+|---|---|
+| App details | Name `Jackman Marketing Internal` + contact email |
+| **Use cases** | Filter **Content management (5)**, tick **both**: "Manage messaging & content on Instagram" and "Manage everything on your Page" |
+| Business | **Jackman Wheel Co.** (`3496370563846561`) — never "skip for now" |
+| Requirements | Whatever the chosen use cases demand |
+| Overview | Review and create |
+
+**Do not pick "Other", even though it is still there.** It sits under *Others (5)* →
+*Looking for something else?*, badged **"This option is going away soon."** It grants
+the old experience with every permission available, which is genuinely more flexible —
+and that is the trap. This connection is meant to run unattended for years. Building it
+on a path Meta has already marked for removal guarantees a forced migration at a moment
+we do not choose. Same reasoning as 2.9: this project has been bitten by Meta
+deprecations twice already.
+
+Also wrong: **"Create an app without a use case"** — an app ID with no permissions, so
+you hand-add everything anyway and get none of Other's benefit.
+
+**Two use-case worries, both unfounded.** They read as *publish* use cases ("publish
+posts, share stories, moderate comments"), which looks like it contradicts the
+read-only posture in `D-12`. A use case sets the **maximum set of permissions the app
+may request** — it grants nothing. Scopes are still chosen individually at 2.3 and 2.5.
+And use cases **can be added to an existing app later**, so a wrong pick here is not the
+rebuild this document originally claimed.
 
 ### 2.2 Add the products
 
-In the app dashboard add **Instagram** (Instagram Graph API) and **Facebook Login for
-Business**. Add **Marketing API** too if Phase 1 was blocked.
+Largely handled by the use cases now — selecting them wires up the Instagram and Pages
+APIs rather than requiring products to be added by hand. Confirm on the app dashboard
+that Instagram and Pages are present, and add **Marketing API** only if Phase 1 was
+blocked (it was not — the official connector works, see `D-14`).
 
 ### 2.3 Confirm Standard Access is enough — it is
 
@@ -179,13 +236,38 @@ dies every two months. System user tokens **do not expire unless revoked.** For
 anything unattended this is the only sane choice.
 
 1. `business.facebook.com` → **Business settings → Users → System users → Add**
-2. Name: `jackman-marketing-automation` · Role: **Employee**, not Admin — it only needs
+2. Name: **`Jackman Automation`** — the name that actually works. System user names are
+   validated against Facebook's *personal profile* name policy, which is fussier than
+   anyone expects. Two rejections on the way there, 2026-10-08:
+   - `jackman-marketing-automation` → *"Profile names can't have too many hyphens."*
+   - `Jackman Marketing Automation` → *"You choose an invalid System User name."*
+
+   Short and plain wins; the validator wants something that reads like a person's name.
+   The name is cosmetic — a label in audit logs, referenced by nothing — so take the
+   first one accepted rather than fighting for a preferred string.
+   Role: **Employee**, not Admin — it only needs
    to read the assets we assign it.
-3. **Add assets** — the step people skip. Assign the **Facebook Page**, the
-   **Instagram account**, and the **ad account** individually, each with specific task
-   permissions. A system user with no assigned assets authenticates fine and then
-   returns empty arrays for everything, which looks exactly like a broken token and
-   costs an hour to diagnose.
+3. **Add assets** — the step people skip. **Four** categories, not three:
+
+   | Asset type | Assign | Permission |
+   |---|---|---|
+   | Facebook Pages | Both Jackman pages (see 2.6a) | **Insights** only |
+   | Instagram accounts | `jackmanwheels` | **Insights** only |
+   | Ad accounts | `1537776554750013` | View performance only |
+   | **Apps** | **Jackman Marketing Internal** | **Develop app** |
+
+   **The Apps row is the one that gets forgotten** — this document omitted it until
+   2026-10-08, and the failure is opaque: Generate token returns *"No permissions
+   available. Assign an app role to the system user or select another app to
+   continue."* Nothing says "you skipped the Apps asset." Assign the app, then the
+   permission list populates.
+
+   Leave **Content** off everywhere — read its description, it grants create, manage
+   and *delete* posts. Insights is `read_insights` and is what the reporting needs.
+
+   And the original warning still stands for the other three: a system user with no
+   assigned assets authenticates fine and then returns empty arrays for everything,
+   which looks exactly like a broken token and costs an hour to diagnose.
 
 ### 2.5 Generate the token
 
@@ -218,6 +300,36 @@ Verify it took, without printing the value:
 ```bash
 node -e "console.log(process.env.JACKMAN_META_TOKEN ? 'present, ' + process.env.JACKMAN_META_TOKEN.length + ' chars' : 'MISSING')"
 ```
+
+### 2.6a ID reference — every identifier in this build
+
+Recorded 2026-10-08, during the live setup. None of these are secrets; all of them are
+tedious to reconstruct.
+
+| What | ID |
+|---|---|
+| Business portfolio (Jackman Wheel Co.) | `3496370563846561` |
+| App (Jackman Marketing Internal) | `3578241745683340` |
+| System user (Jackman Automation) | `61595005720814` |
+| Ad account — the real one | `1537776554750013` |
+| Ad account — **not ours**, do not report on | `87976982` |
+| Facebook Page A | `1139927732536365` |
+| Facebook Page B | `1154414221086645` |
+
+**The page ID correction that cost us twenty minutes.** `D-02` and `D-11` record the
+Jackman pages as `61590115023694` (live) and `61560110244171` (dark duplicate). Those
+are **URL / profile IDs** — the number in `facebook.com/615…` under the New Pages
+Experience. The Graph API uses an entirely different ID for the same page, and
+Business Manager's asset picker searches the Graph ID. Searching `61590115023694`
+there returns nothing, which looks like the page is missing rather than like the ID is
+the wrong kind.
+
+Meta allocates system user IDs out of the same `615…` range, which is how the two get
+conflated — note the system user above.
+
+**Both pages were assigned** to the system user, Insights only, so `meta_whoami` can
+identify which one carries the Instagram account and real follower counts. Unassign the
+other once that is known, and record the winner here.
 
 ### 2.7 Resolve your IDs
 
@@ -283,6 +395,39 @@ So the first thing after the token works is a probe script requesting each candi
 metric and recording which return data, which error, and which come back empty. That
 output becomes the metric contract the tools are built against. Twenty minutes that
 prevents a month of quietly wrong numbers.
+
+#### Probe results — 2026-10-09, Graph v25.0
+
+**20 live · 1 empty · 8 dead.** Contract stored at
+`jackman-meta-mcp/metric-contract.json`. Re-run after any version bump.
+
+**Dead — all Facebook, all `(#100) not a valid insights metric`:**
+`page_impressions` · `page_impressions_unique` · `page_fans` · `page_fan_adds` ·
+`page_fan_removes` · `page_fan_adds_unique` · `page_posts_impressions` ·
+`page_posts_impressions_unique`
+
+**Three of those were columns in the snapshot script.** Unprobed, that CSV would have
+written blanks in three of four Facebook columns every day, silently, and the gap would
+have surfaced in January while trying to explain a trend. This is the entire argument
+for the probe in one sentence.
+
+**Live and not previously known about**, found by widening the candidate list rather
+than guessing: `page_daily_follows` · `page_daily_follows_unique` ·
+`page_daily_unfollows_unique` · `page_total_actions` · `page_video_views`
+
+**Empty:** `follows_and_unfollows` — accepted, no value. Likely a volume threshold on a
+946-follower account rather than a dead metric. Re-probe in a few weeks.
+
+#### The Page access token bug — fixed 2026-10-09
+
+The first probe returned `(#190) This method must be called with a Page Access Token`
+for three Page metrics. **Page insights reject the system user token.** The page's own
+token comes from `/me/accounts?fields=id,access_token` and is now fetched and cached in
+`getPageToken()`. Facebook went from 0 of 8 working to 8 of 8.
+
+Worth noting how this was found: the error *codes* split the failures cleanly — 190
+meant "right metric, wrong token," 100 meant "wrong metric." Without surfacing Meta's
+full error detail the whole set would have looked like one undifferentiated failure.
 
 ### 2.10 Register the server with Claude
 
@@ -352,13 +497,29 @@ one query instead of a shrug.
   this"; a zero means "genuinely nothing happened." Conflating them ruins trend
   analysis in a way that is invisible six months later.
 
-Schedule it once the token works, via Windows Task Scheduler, daily at 07:00:
+**Scheduled and verified running, 2026-10-08.** Daily 07:00, pulling *yesterday* so the
+day is complete when it runs.
 
 ```bash
-schtasks /create /tn "Jackman social snapshot" /tr "cmd /c cd /d C:\Users\AustinFitzgerald\jackman-meta-mcp && npm run snapshot" /sc daily /st 07:00
+schtasks /create /tn "Jackman social snapshot" /tr 'cmd /c node "C:\Users\AustinFitzgerald\jackman-meta-mcp\src\cli-snapshot.js" >> "C:\Users\AustinFitzgerald\jackman-meta-mcp\snapshot.log" 2>&1' /sc daily /st 07:00 /f
 ```
 
-It pulls *yesterday*, not today, so the day is complete when it runs.
+**Call `node` directly — not `npm run snapshot`.** The npm version was tried first and
+failed with `Last Result: -1073741510` (`STATUS_CONTROL_C_EXIT`): `cmd` → `npm.cmd` →
+`node` picks up a console control event and dies in a non-interactive task session. The
+log showed `^C^C` and nothing else. Dropping npm from the chain fixed it, `Last Result:
+0`.
+
+**Always verify a scheduled task by running it**, rather than trusting the "SUCCESS:
+task created" message — that message only means the *schedule* was registered, not that
+the command works:
+
+```bash
+schtasks /run /tn "Jackman social snapshot"
+schtasks /query /tn "Jackman social snapshot" /fo LIST /v | findstr "Last Result"
+```
+
+`Last Result: 0` is success. Anything else, read `snapshot.log`.
 
 Feeds the Marketing Portal artifact directly — same numbers, live.
 
@@ -387,25 +548,24 @@ The connection is plumbing. The reason for the plumbing:
 |---|---|---|---|
 | D-12 | Read-only, or read + publish? | **Read-only to start**, revisit in two weeks | `PROPAGATED` |
 | D-13 | Full admin on the Business Portfolio? | **Yes, full control** — no blocker | `PROPAGATED` |
-| D-14 | Ad account ready? Connector eligible? | **Account exists, not spending.** Connector eligibility untested | `DECIDED` |
+| D-14 | Ad account ready? Connector eligible? | **Both yes.** Connector verified working 2026-10-08 | `PROPAGATED` |
 | D-15 | Who drives the browser clicking? | **Austin drives, Claude directs** | `PROPAGATED` |
+| D-16 | No payment method on the ad account | Card added 2026-10-08 — but **still zero campaigns** | `PROPAGATED` |
 
 ---
 
-## What is left, in order
+## What is left — housekeeping only
 
-Everything on this machine is done. Everything remaining is on Meta's side, and needs
-your hands because it involves logging into the account that controls Jackman's social
-presence.
+The build is finished. These are loose ends, none of them blocking.
 
-| # | Step | Where | Who |
+| # | Item | Why it matters | Who |
 |---|---|---|---|
-| 1 | Phase 0 checks 0.1–0.6 | Business Settings + IG app | Austin, ~20 min |
-| 2 | Phase 1 — add `https://mcp.facebook.com/ads` | claude.ai Settings → Connectors | Austin, ~15 min |
-| 3 | Steps 2.1–2.5 — app, system user, token | developers.facebook.com + Business Settings | Austin, Claude directing |
-| 4 | Step 2.6 — `setx JACKMAN_META_TOKEN` | terminal | Austin |
-| 5 | `npm run whoami` then `npm run probe` | terminal | Claude reads the output |
-| 6 | Schedule the daily snapshot | Task Scheduler | Claude, once 5 passes |
+| 1 | **Unassign Page B** `1154414221086645` from the system user | Both pages were assigned to find out which was live. Now we know — Page A. Least privilege says drop the other | Austin, 2 min |
+| 2 | **Correct the page IDs in `D-02` and `D-11`** | Both record `615…` profile IDs while calling them page IDs. The real ones are in 2.6a. Wrong data in the canonical record | Claude |
+| 3 | **Verify `profile_links_taps`** | 30,188 views over 14 days returned **zero** link taps. Either a real conversion problem or a metric not registering. Tap the bio link, check tomorrow's snapshot for a 1 | Austin, 10 sec |
+| 4 | **Quarterly review calendar item** (Phase 3) | Token still valid, scopes still minimal, no metrics gone dark. Never actually scheduled | Austin |
+| 5 | **`D-16` — zero campaigns** | The ad account can spend and has never been asked to. Paid launch decided 2026-09-14, still not running | Austin |
 
-Step 5 is where I take over. The probe output tells us which metrics Jackman's
-accounts actually report, and that becomes the contract every report is built on.
+**Item 3 is the one with teeth.** If link taps are genuinely zero, the organic account
+is manufacturing attention that goes nowhere, and that is a bigger finding than anything
+in the connection work.

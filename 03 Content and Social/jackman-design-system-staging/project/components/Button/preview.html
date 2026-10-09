@@ -1,0 +1,20 @@
+<!-- @dsCard group="Actions" height=170 subtitle="Primary, secondary, text" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Poppins:wght@400;600;700&display=swap">
+<style>
+body{margin:0;padding:var(--space-6) var(--space-6);background:var(--surface);color:var(--ink);font-family:var(--font-sans),Poppins,sans-serif}
+.row{display:flex;gap:var(--space-4);flex-wrap:wrap;align-items:center}
+.eyebrow{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted);margin:0 0 var(--space-2)}
+.btn{font:700 14px/20px var(--font-sans),Poppins,sans-serif;letter-spacing:.18em;text-transform:uppercase;padding:var(--space-3) var(--space-6);border-radius:var(--radius-sm);border:2px solid transparent;cursor:pointer}
+.primary{background:var(--highlight);color:var(--on-highlight)}
+.secondary{background:transparent;color:var(--ink);border-color:var(--bronze)}
+.text{background:none;color:var(--ink);padding-left:0;padding-right:0;border-radius:0;border-bottom:2px solid var(--bronze)}
+.btn:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.btn[disabled]{color:var(--ink-muted);background:transparent;border-color:var(--ink-muted);cursor:not-allowed}
+</style></head><body>
+<p class="eyebrow">One primary per view</p>
+<div class="row">
+<button class="btn primary">Find your fit</button>
+<button class="btn secondary">View specs</button>
+<button class="btn text">Read the story</button>
+<button class="btn" disabled>Unavailable</button>
+</div></body></html>

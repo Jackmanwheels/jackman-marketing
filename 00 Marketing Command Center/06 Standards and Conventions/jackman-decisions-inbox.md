@@ -46,8 +46,16 @@ stays `PROPOSED` until they do.
 
 **ANSWER:** **Established 1968.** Short form: **Est. 1968.**
 
-**Status:** `PROPOSED` — decided 2026-09-15. Downstream docs updated; the guardrail
-change needs ratification (see `jackman-brand-change-proposal-founding-date-v1.md`).
+**Status:** `PROPAGATED` — decided 2026-09-15, **ratified and applied 2026-10-06.**
+
+Applied to: guardrail #5 in `jackman-claude-instructions.md` · `brand-facts.md` in the
+`jackman-brand-guidelines` skill *(missed in the original proposal — caught 06 Oct)* ·
+`social-review` SKILL.md and the session-prompt SOP *(both defer to this Status line, so
+they resolved automatically)* · `chief-of-marketing` SKILL.md · social strategy v2 ·
+social playbook v1 · both pre-flight checklists.
+
+**Still outstanding:** `B-05` Our Story page · `B-06` homepage line · `B-07` sourcing.
+Those are live-site copy, not governance.
 
 **Unblocked:** `P-02` IG bio · `C-05` heritage weekly slot · `L-05` heritage media pitch ·
 the entire Heritage pillar · the "Established 1968. Rebirthed 2026." positioning.
@@ -96,6 +104,10 @@ Facebook pages.** Kevin's audit cited page ID `61560110244171` as the one listin
 TX. That page now returns *"This content isn't available right now."* The page the
 website actually links to is a **different ID — `61590115023694`** — with 23 followers,
 posting actively, and no address in its public Intro.
+
+**ID correction, 2026-10-08:** both page IDs quoted above are URL/profile IDs, not Graph
+page IDs — see `D-11` for the real ones (`1139927732536365` is the live page). The
+address decision is unaffected; the identifiers are not.
 
 So this was a stale-duplicate-page problem rather than a genuine address dispute.
 **It was two questions, not one:**
@@ -291,9 +303,30 @@ has been changed on that basis.
 listing Austin, TX, now returning *"This content isn't available right now"* — and should
 it be merged into `61590115023694` or removed?
 
-**ANSWER:**
+**ANSWER:** Still open on the merge question. But **the IDs in this item are the wrong
+kind of identifier**, corrected 2026-10-08.
 
-**Status:** `OPEN` — carved out of `D-02` on 2026-09-15.
+`61560110244171` and `61590115023694` are **URL / profile IDs** — the number that
+appears in `facebook.com/615…` under the New Pages Experience. The Graph API, and
+Business Manager's own asset picker, use a **different ID for the same page**. Searching
+the `615…` numbers in Business Manager returns nothing, which reads as "this page does
+not exist" rather than "you are searching the wrong namespace." That cost twenty
+minutes during the Meta connection build.
+
+**The real Graph page IDs**, both owned by the Jackman Wheel Co. portfolio:
+
+| Graph ID | State |
+|---|---|
+| `1139927732536365` | **The live page.** Confirmed 2026-10-08 as the only one carrying the Instagram account |
+| `1154414221086645` | The other page. Returned nothing from `/me/accounts` |
+
+**What is still genuinely unresolved:** whether `1154414221086645` *is* the dark
+duplicate this item describes. It is the only other page the portfolio owns, so it
+probably is — but "probably" is what got us here, and nobody has matched the two
+namespaces directly. Do that before merging or deleting anything.
+
+**Status:** `OPEN` — carved out of `D-02` on 2026-09-15. IDs corrected 2026-10-08; the
+merge-or-remove question is untouched.
 
 **Why it stayed open when the address closed:** the address conflict is resolved because
 the bad listing went dark. The *page* is still there. A second brand page splits search
@@ -371,12 +404,25 @@ Meta Ads connector (`https://mcp.facebook.com/ads`) actually work for your accou
 **ANSWER:** **Ad account exists, not spending yet.** The best possible timing — we wire
 reporting up before the first dollar goes out instead of reconstructing it afterward.
 
-Connector eligibility is still untested; that gets answered in fifteen minutes of
-trying, at Phase 1.
+**Connector eligibility: CONFIRMED WORKING, verified 2026-10-08.** The official Meta
+Ads connector accepts the account and returns live data. Phase 1 is done, and Phase 2
+stays organic-only as planned.
 
-**Status:** `DECIDED` — answered 2026-09-17. Half of this item (does the account exist)
-is closed; the other half (does the official connector accept us) resolves on first
-attempt and I will record it here.
+**Status:** `PROPAGATED` — both halves closed 2026-10-08. But verifying it surfaced a
+new blocker, carved out to `D-16`.
+
+**What the first real query found (2026-10-08).** Three ad accounts are visible:
+
+| Account | Name | State |
+|---|---|---|
+| `1537776554750013` | Jackman Wheel Co.'s ad account | **The real one.** Zero campaigns ever, zero spend ever, **no payment method attached** |
+| `87976982` | *(unnamed, shows as its own ID)* | **Not Jackman.** Five campaigns for Gallagher Restoration Co, Time Bomb Prints, a framed-print IG post. One still `ACTIVE`, delivering nothing. Zero spend last 14 days |
+| `672187568745989` | Shopify: outhousecoffee | Not Jackman, MCP disabled |
+
+**Two things follow.** First, the paid launch has not started — see `D-16`. Second,
+`87976982` is a reporting hazard of exactly the same shape as the duplicate Facebook
+page in `D-11`: an account we can see, that is not ours to report on. Any future ads
+query must name `1537776554750013` explicitly rather than taking the first account back.
 
 **Why it matters:** the connector is in **open beta** as of April 2026, so eligibility
 is Meta's call and not something we can force. Fifteen minutes of trying tells us which
@@ -417,6 +463,50 @@ That is worth the extra twenty minutes.
 **I can still help live:** you share what you are seeing, I tell you which option to
 pick and why, and I flag the two checkboxes that are easy to get wrong (token expiry in
 2.5, asset assignment in 2.4).
+
+---
+
+## D-16 — No payment method on the Jackman ad account
+
+**Question:** The paid social launch was decided 2026-09-14 ($2–2.5k/mo test, awareness-first,
+three segments). It is now 24 days later and **nothing has run** — the Jackman ad account has
+never had a campaign and has no payment method attached. Is the launch still on, and who adds
+the card?
+
+**ANSWER:** **Card added 2026-10-08, same day.** Verified: account `1537776554750013` now
+reports `has_payment_method: true`, `account_status: ACTIVE`, queryable, USD, minimum daily
+budget $1.00. The account can spend.
+
+**Status:** `PROPAGATED` — the payment blocker is closed. **The launch is still not running**,
+for a different and more ordinary reason: there are zero campaigns. A card makes an account
+able to spend; it does not make it spend. Tracked onward in `project_social-ads-launch`.
+
+**How it surfaced:** asking for a 14-day campaign summary returned nothing, and tracing why
+found an account with zero campaigns, zero lifetime spend, and `has_payment_method: false`.
+The connection is fine. The campaign never started.
+
+**One blind spot worth recording.** Ads Manager *drafts* cannot be read for this account —
+Meta has not rolled that endpoint out to it yet. So if campaigns were staged as drafts rather
+than published, this report would not see them and would still say "zero campaigns." Only
+published objects are visible to us today.
+
+**Why this did not announce itself.** Nothing errors when an ad account has no payment method
+— it just sits there looking configured. The decision was made, the account existed, the box
+appeared ticked. Three and a half weeks of the test budget went unspent without a single
+warning anywhere.
+
+**The fix is about five minutes** — Business settings → Payment methods → add card — and it is
+yours to do, not mine. I do not enter payment details.
+
+**What it costs to leave.** The test was sized to buy a read on three segments. Every week
+unspent is a week where the only thing we know about Jackman's paid performance is nothing,
+while the reporting pipeline built to measure it sits idle. The ambassador program and the
+organic series both assume paid is running alongside them.
+
+**Second question worth answering while you are in there:** does anyone still need the one
+`ACTIVE` campaign in account `87976982` (promoting a third Facebook page, `61563381456398`,
+unrelated to either Jackman page)? It is delivering nothing today, but an active campaign in
+an account nobody is watching is how surprise spend happens.
 
 ---
 

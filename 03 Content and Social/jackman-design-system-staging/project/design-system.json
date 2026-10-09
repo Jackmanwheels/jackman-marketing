@@ -1,0 +1,92 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-10-07T15:30:33.697Z"
+ },
+ "title": "Jackman Wheels",
+ "namespace": "Jackman",
+ "libraries": [],
+ "sections": {},
+ "groups": [
+  "Logos"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "l",
+   "order": [
+    "jackman-lockup-stacked-white.png",
+    "jackman-lockup-stacked-black.png",
+    "jackman-badge-j-white.png",
+    "jackman-badge-j-black.png",
+    "jackman-lockup-stacked-white.pdf",
+    "jackman-lockup-stacked-black.pdf",
+    "jackman-badge-j-white.pdf",
+    "jackman-badge-j-black.pdf"
+   ],
+   "files": {
+    "jackman-lockup-stacked-white.png": {
+     "name": "jackman-lockup-stacked-white.png",
+     "blob": "bf009b6fd0b59e9cfb8e7c061b42fb20",
+     "size": 35838,
+     "type": "image/png"
+    },
+    "jackman-lockup-stacked-black.png": {
+     "name": "jackman-lockup-stacked-black.png",
+     "blob": "9258d160f70ff1e6409537842f2263c8",
+     "size": 38794,
+     "type": "image/png"
+    },
+    "jackman-badge-j-white.png": {
+     "name": "jackman-badge-j-white.png",
+     "blob": "bf267d87514e85c279c17015ccc7fca7",
+     "size": 79657,
+     "type": "image/png"
+    },
+    "jackman-badge-j-black.png": {
+     "name": "jackman-badge-j-black.png",
+     "blob": "e6b4268893f6472b3e97e0ee5813b0fa",
+     "size": 81854,
+     "type": "image/png"
+    },
+    "jackman-lockup-stacked-white.pdf": {
+     "name": "jackman-lockup-stacked-white.pdf",
+     "blob": "32abf9837aa61849634586cb721d7b31",
+     "size": 44806,
+     "type": "application/pdf"
+    },
+    "jackman-lockup-stacked-black.pdf": {
+     "name": "jackman-lockup-stacked-black.pdf",
+     "blob": "36766ac15861acaa40e33cc5f196407c",
+     "size": 61056,
+     "type": "application/pdf"
+    },
+    "jackman-badge-j-white.pdf": {
+     "name": "jackman-badge-j-white.pdf",
+     "blob": "a740269383449e044b1e55273df82a1f",
+     "size": 55093,
+     "type": "application/pdf"
+    },
+    "jackman-badge-j-black.pdf": {
+     "name": "jackman-badge-j-black.pdf",
+     "blob": "11b5cbb68249938d3dd6d36d9d373e1d",
+     "size": 415953,
+     "type": "application/pdf"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Austin Fitzgerald",
+  "at": "2026-10-07T15:30:33.698Z",
+  "via": "Claude Code",
+  "note": "Initial system from the Jackman brand guidelines"
+ }
+}

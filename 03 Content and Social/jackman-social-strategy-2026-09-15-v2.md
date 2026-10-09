@@ -29,13 +29,13 @@ FB 23 followers · 0 reviews · proof posts 0 of 56.
 
 ## Part 1 — Where we stand
 
-### The 1968 problem — the urgent one
+### The 1968 question — RESOLVED 2026-10-06. Founding date is 1968 ("Est. 1968"). The three-claims problem described below is historical; the remaining work is correcting the site (`B-05`, `B-06`).
 
 The Instagram bio reads **"Established: 1968."** A grid graphic reads **"THERE AND BACK — EST. 1968."** The homepage says *"California-born since the 1960s."* The Our Story page places Harry and Sheryl's hand-built wheels in the **mid-1970s**.
 
 Three different founding claims in market at once, on a brand whose entire premise is heritage. It's the one thing a skeptic disproves in a single click, and it's sitting in the first two lines a stranger reads.
 
-Until the family settles it, the bio says **California-born** and nothing more. If 1968 is confirmed, put it everywhere and correct the site. Either outcome is fine. Two dates is not.
+**Settled 2026-10-06: the founding date is 1968.** It goes everywhere — bio, captions, heritage content — as "Established 1968" or "Est. 1968." The site still needs correcting to match: the Our Story mid-1970s passage reads as a second origin date (`B-05`), and the homepage's "since the 1960s" is now vaguer than we need (`B-06`).
 
 ### Also this week, all small
 
@@ -175,7 +175,7 @@ Scanned 14 September 2026.
 
 **Finding 7 — Originality exposure: likely, not verified.** All three wheel brands run grids dominated by builds they didn't shoot. Method and Vossen's medians (7%, 5%) are consistent with suppressed reach at their size. What isn't circumstantial: **none of the four appear to use Collab posts.**
 
-**One loose end.** Vossen's bio reads *"Custom Forged and Hybrid Forged™ Wheels since 06'."* They state a founding year without hesitating. We can't — see Part 1.
+**One loose end.** Vossen's bio reads *"Custom Forged and Hybrid Forged™ Wheels since 06'."* They state a founding year without hesitating. As of 2026-10-06, so can we — and ours is 38 years older.
 
 ---
 
@@ -217,7 +217,7 @@ Technical is split in two, because proof content and mechanism content behave no
 **Heritage — 10% IG · 25% FB · Job: preference**
 - *Is:* Harry and Sheryl. Flame-cut spokes on three-eighths outer rims. The factory. The original artist. Racers, then Bugs and Buses and Bajas.
 - *Where:* second beat on Instagram, never the lead post of the week. First beat on Facebook.
-- *Limits:* no founding decade or year until resolved. Historic story is VW; lineup is trucks — handle as the same thinking applied to what people drive now.
+- *Limits:* founding date is 1968 — ratified 2026-10-06. Historic story is VW; lineup is trucks — handle as the same thinking applied to what people drive now.
 
 **Creative — 10% · Job: test formats**
 - *Is:* the experimental lane. New formats, illustration, apparel, art-direction risks. Explicit permission to fail.
@@ -323,7 +323,7 @@ If it fails, the fix is always the same: shoot a truck.
 3. UGC in the grid — Collab, and permission filed?
 4. Any number, spec, rating or certification that isn't published? Then it comes out.
 5. ™ correct on first use — the three marks only?
-6. Founding decade mentioned? Then it comes out.
+6. Founding date mentioned? It reads "Established 1968" or "Est. 1968" — nothing vaguer, nothing else.
 7. "Lifetime warranty" unqualified, or any implication of off-road coverage? Then it comes out.
 8. Bronze type on graphite? 2.87:1 — it vanishes on a phone in daylight.
 9. Run `scripts/brand_check.ps1` on the caption. Mechanical check only — it catches

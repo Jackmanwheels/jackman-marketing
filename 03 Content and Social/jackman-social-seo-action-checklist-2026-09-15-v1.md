@@ -4,7 +4,7 @@
 **Source:** Kevin Fitzgerald, *Social Growth & Search Visibility Playbook*, v2 (13 Sep 2026)
 **Companions:** `jackman-social-strategy-2026-09-15-v2.md` (pillars, positioning) ·
 `jackman-social-playbook-2026-09-14-v1.md` (run sheet) ·
-`jackman-social-desk-card-2026-09-15-v1.docx` (pre-flight)
+`jackman-social-desk-card-2026-10-06-v2.docx` (pre-flight)
 
 Kevin's document is a strategy paper. This is the execution list pulled out of it —
 sequenced, owned, and ID'd so the monthly report can point at line items instead of
@@ -88,13 +88,47 @@ every day it stays broken, and most of it takes under an hour.
 
 - [x] **B-01 — Settle the founding date.** ✅ **DONE 15 Sep 2026 — the date is 1968.**
       Approved forms: "Established 1968" and "Est. 1968." Recorded as `D-01`.
-- [ ] **B-05 — Fix the Our Story page.** It places the hand-built wheels in the
+- [x] **B-05 — Fix the Our Story page.** ✅ **DONE — verified live 6 Oct 2026.** Hero now
+      reads *"ESTABLISHED 1968. WHEN THE OFF-ROAD BOOM HIT ITS PEAK IN THE MID-1970S,
+      JACKMAN WAS ALREADY THERE."* The mid-1970s is now positioned as the boom era rather
+      than a second origin date, which was the whole defect. Title tag also updated to
+      *"Jackman Wheels Heritage | California Off-Road Wheels Since 1968."* The "ZEITGEST"
+      typo is gone with the old sentence. *(Original item text below.)*
+
+      It places the hand-built wheels in the
       **mid-1970s**, which now reads as a second origin date. Add one line establishing
       1968 as the founding and the mid-70s as a later chapter. **Highest priority of the
       1968 follow-ups — this is the one a skeptic actually catches.** · *Effort: 1h*
-- [ ] **B-06 — Tighten the homepage line.** "California-born since the 1960s" is
+- [x] **B-06 — Tighten the homepage line.** ✅ **DONE 6 Oct 2026 — the contradiction is
+      gone.** Verified live: "California-born since the 1960s" has been removed. The
+      homepage Our Story block now reads *"born in California during the golden era of
+      West Coast car culture."* No competing decade claim anywhere on the page.
+
+      **Follow-up logged as `B-08` — the year is removed but not replaced.** The homepage
+      now carries no founding date at all, and its title tag still reads *"Jackman Wheels
+      | Heritage Aftermarket Wheels. Built for Trucks, Jeeps."* Our Story carries 1968;
+      the highest-authority page on the site doesn't. *(Original item text below.)*
+
+      "California-born since the 1960s" is
       consistent with 1968 but vaguer than we now need to be. Make it the specific year.
       · *Effort: 15 min*
+- [ ] **B-08 — Put 1968 on the homepage.** Split out of `B-06` on 6 Oct. The vague decade
+      claim is gone, but nothing replaced it — the homepage carries no founding date and
+      its title tag reads *"Jackman Wheels | Heritage Aftermarket Wheels. Built for
+      Trucks, Jeeps."* Our Story has the year; the homepage doesn't.
+
+      **Why it matters:** the homepage title tag is the single highest-authority SEO field
+      on the site, and lineage is the one claim no competitor in the category can copy.
+      Suggested: `Jackman Wheels | Truck & Jeep Wheels Since 1968`. Add the year to the
+      Our Story teaser block too — it currently says "the golden era of West Coast car
+      culture," which is evocative but unfalsifiable; 1968 is the part that isn't. ·
+      *Effort: 15 min*
+- [ ] **B-09 — Fix the dead ACCESSORIES tile on the homepage.** Found 6 Oct 2026. The
+      homepage shop tiles are SHOP WHEELS / APPAREL / **ACCESSORIES**, and the Accessories
+      tile links to `#` — it goes nowhere. Separate from `W-04` (that was about the empty
+      collection being indexable; this is a visible dead control on the highest-traffic
+      page). Given accessories aren't being listed, the tile should probably come down
+      until there's something behind it. · *Effort: 10 min*
 - [ ] **B-07 — Source the 1968 claim.** Find the ad, catalogue, incorporation record or
       photograph that evidences it and scan it into `01 Brand and Creative`. A decision
       fixes the inconsistency; **documentation is what makes the claim un-disprovable**,
@@ -108,7 +142,12 @@ every day it stays broken, and most of it takes under an hour.
 - [x] **B-03 — Open the `jackmanwheels.shop` question with counsel.** ✅ **DONE 15 Sep
       2026.** Question is routed. The *answer* lands in `B-03b` (Phase 4) and gets
       recorded as `D-03` — still open until counsel comes back.
-- [ ] **B-04 — Order box inserts and hang tags carrying `#JackmanWheels`.** Print lead
+- [x] **B-04 — Order box inserts and hang tags carrying `#JackmanWheels`.** ✅ **DONE
+      6 Oct 2026**, confirmed by Austin. This is the physical half of hashtag ownership —
+      every box that ships now teaches the customer what to tag. Pairs with `C-06` Build
+      of the Month to turn the print run into actual mentions. *(Original item below.)*
+
+      Print lead
       time is the constraint, not the design. Start the vendor conversation in week 1
       even though it lands in Phase 3. · *Effort: 2h + vendor lead time*
 
@@ -163,7 +202,34 @@ every day it stays broken, and most of it takes under an hour.
       the homepage directly — it's unchanged since 15 Sep, still just
       `{"@type":"Organization","name":"Jackman Wheels","url":"https://jackmanwheels.com"}`.
       The full block above is ready to paste as-is; nothing new is blocking it.
-- [ ] **W-03 — Audit the seven duplicate collections.** `17-inch`, `18-inch`, `5-lug`,
+- [ ] **W-03 — Audit the seven duplicate collections.** ⚠️ **KEVIN'S DIAGNOSIS WAS
+      WRONG — re-audited against the live Shopify catalog, 6 Oct 2026.**
+
+      He attributed the identical product sets to broken tagging. It isn't. **The catalog
+      genuinely is that uniform:** every one of the 18 wheel products is offered in
+      17-inch, 5-lug, 6-lug, 5x5 and 6x5.5. So `17-inch-wheels`, `5-lug-wheels`,
+      `6-lug-wheels`, `chevy-gmc-wheels`, `jeep-wheels` and `toyota-truck-wheels`
+      returning all 18 is **accurate**, not a bug.
+
+      **Which means re-tagging cannot fix this.** The duplication is a product-line fact.
+      The fix is canonicalization plus the `W-05` vehicle fitment pages — those pages are
+      now the *only* available source of genuine differentiation, which raises `W-05`
+      from "highest-traffic opportunity" to "the only thing that solves this."
+
+      Genuinely differentiated already: 18-inch (12 after fix) · 20-inch (5) · 8-lug (7) ·
+      Bronze (6) · Black (6) · Machined (6) · Ford (17).
+
+      **✅ DONE 6 Oct — four false size tags removed.** J69 Satin Black, J69 Matte Bronze,
+      J71 Satin Black and J71 Machined As-Cast each carried an `18-inch` tag with **zero
+      18-inch variants**. A shopper filtering for 18s landed on a product with no 18s to
+      buy — a conversion defect, not just an SEO one. Collection is re-indexing 16 → 12.
+
+      **Near-miss worth recording:** the three J72 products looked like they had false
+      `20-inch` tags too. They don't — the variant list paginates at 12 and J72 carries
+      20x9 variants beyond that. Always pull `variantsCount` before trusting a variant
+      list. *(Original Kevin text below for the record.)*
+
+      `17-inch`, `18-inch`, `5-lug`,
       `6-lug`, `chevy-gmc`, `ford-truck` and `all-jackman-wheels` each return the same
       13 wheels. Google sees seven near-duplicate category pages; a shopper sees a
       filter that does nothing. Fix the tagging so each returns a genuinely different
@@ -174,25 +240,35 @@ every day it stays broken, and most of it takes under an hour.
       changed. This is a merchandising/tagging decision (fix the filters vs. consolidate
       and canonicalize), not a copy fix — needs Austin's call on approach before anyone
       drafts anything.
-- [ ] **W-04 — Kill or fill `/collections/accessories`.** Zero products, live, in the
-      sitemap. Populate it or noindex it. · *Effort: 15 min*
+- [x] **W-04 — Empty collections.** ✅ **CLOSED 6 Oct 2026 — WON'T DO, Austin's call.**
+      Beadlocks and accessories aren't being listed on the site at the moment, so the
+      empty collections are expected rather than broken. Kevin flagged
+      `/collections/accessories` as a thin indexable page; that's accurate but it's a
+      deliberate state, not a defect.
+
+      **Audit record (6 Oct):** `/collections/accessories` and
+      `/collections/beadlock-wheels` both return 0 products and are both live and
+      indexable. Neither is linked from the homepage. **`accessories` does appear on the
+      `/collections` index page**, so there is exactly one clickable path to an empty
+      page; `beadlock-wheels` is reachable only by direct URL or sitemap.
+
+      **If this is ever revisited:** `publishableUnpublish` on either collection from the
+      Online Store publication (`gid://shopify/Publication/152929140810`) hides it without
+      deleting it — fully reversible. Reopen as `W-04b` if accessories stay unlisted past
+      the point where the empty page starts accumulating impressions.
       **Verified still open, 25 Sep 2026 by the SEO agent:** still live, still "Coming
       Soon," no products, no `noindex` meta tag — fully indexable as-is.
 
 ### Profile
 
-- [ ] **P-01 — Rewrite the IG Name field** (the bold line, not the handle) to
-      `Jackman Wheels | Truck & Jeep Wheels`. The Name field is directly searchable
-      inside Instagram and weighted like the handle. "Jackman Wheel Co." earns nothing
-      we don't already own. · *Effort: 5 min*
-- [ ] **P-02 — Rewrite the IG bio.** Lead with what we sell and who for, then the
-      heritage line, then `#JackmanWheels`. It currently opens on "Established 1968 /
-      Rebirthed 2026" with no product words at all — someone searching "truck wheels"
-      will never surface us. · *Effort: 30 min · Unblocked — heritage line reads "Est. 1968"*
-- [ ] **P-03 — Verify "Allow public photos and videos to appear in search engine
-      results" is ON** (Settings → Privacy). Defaults on for professional accounts, but
-      verify — if it's off, every social-SEO item in this file is dead on arrival. ·
-      *Effort: 2 min*
+- [x] **P-01 — Rewrite the IG Name field.** ✅ **DONE — verified live 6 Oct 2026.** Reads
+      `Jackman Wheels | Truck & Jeep Wheels`. Both category keywords are in the most
+      search-weighted field on the platform.
+- [x] **P-02 — Rewrite the IG bio.** ✅ **DONE — verified live 6 Oct 2026.** Now reads "Truck, Jeep & off-road wheels. / Established 1968. Rebirthed 2026. / Fitment questions, DM us. / #JackmanWheels". Product words are in, the ratified heritage line stays, and the owned hashtag is in the bio where it belongs.
+- [x] **P-03 — Verify search-engine indexing is ON** (Settings → Privacy). ✅ **DONE
+      6 Oct 2026**, confirmed by Austin. This is the switch every social-SEO item in this
+      file depends on — captions, alt text and on-screen text are now crawlable by Google
+      and Bing. Without it, `C-03`, `W-05` and the whole social-SEO thesis are inert.
 - [ ] **P-04 — Build vehicle-segmented Story Highlights:** FORD · CHEVY/GMC · JEEP ·
       TOYOTA · RAM · HERITAGE · FITMENT · DEALERS. Highlight cover text is searchable
       and it lets a shopper self-serve. · *Effort: 3h incl. covers*
@@ -201,10 +277,15 @@ every day it stays broken, and most of it takes under an hour.
 - [x] **P-06 — Confirm whether TikTok and YouTube accounts exist.** ✅ **DONE 15 Sep 2026 — both exist, both empty.** YouTube `@JackmanWheels` (no content), TikTok `@jackmanwheels` (0 posts, no bio), plus an X account Kevin never found. Handles are safe; **fill the TikTok bio** — an empty bio on a claimed handle is the version a searcher finds. Kevin found no public
       presence. If they don't exist, claim the handles this week regardless of when you
       start posting — squatting is cheap to prevent and expensive to undo. · *Effort: 1h*
-- [ ] **P-07 — Start following 40 relevant accounts a day.** 144 follows is far too few
-      for a brand at this stage; target 800–1,200 curated follows by Day 90, every one a
-      person who could plausibly buy or repost. Budget 20 min daily, not a one-off
-      sprint. · *Effort: 20 min/day, ongoing*
+- [ ] **P-07 — Start following 40 relevant accounts a day.** ⚠️ **BEHIND.** Verified 6 Oct:
+      following is **176**, up from 144 on 13 Sep — 32 added in three weeks against a
+      target of 40 *per day*. At this rate we reach ~210 by Day 90, not 800–1,200.
+
+      **This is the cheapest growth lever we have and it's the one not getting done.**
+      Followers went 756 → 928 (+172) in the same window on content alone; outbound
+      follows are additive to that, not a substitute. Either block 20 minutes daily or
+      hand it to someone — the ambassador prospect sheet is already a ready-made list of
+      who to follow. · *Effort: 20 min/day, ongoing*
 
 ---
 
@@ -220,21 +301,48 @@ output starts.
       mix: 2 Reels (one customer build or install, one heritage or shop floor), 1–2
       carousels, 1 single hero image. Four strong posts beat seven mediocre ones — a
       skipped post suppresses the next one. · *Effort: ongoing*
-- [ ] **C-03 — Fold Kevin's caption rules into the existing desk card** so there's one
-      pre-flight, not two. The additions: keywords front-loaded in the first 125
-      characters; vehicle named every time (year/make/model + wheel model + size +
-      finish); human-written alt text on every image; 3–5 hashtags maximum (IG hard
-      capped at five in Dec 2025) always including `#JackmanWheels`; one concrete ask,
-      not three; burned-in captions on all video. · *Effort: 2h*
-- [ ] **C-04 — Adopt the ten repeatable formats** (§4) as named formats in the content
-      calendar: Stock vs. Jackman · "Will it fit?" · Unbox-to-mounted in 30s · 1968 vs
-      2026 · Owner takeover · Shop floor macro · Finish poll · The spec myth · Dealer
-      spotlight · Wrong wheel, right truck. · *Effort: 2h*
+- [x] **C-03 — Fold Kevin's caption rules into the desk card.** ✅ **DONE 6 Oct 2026** →
+      `jackman-social-desk-card-2026-10-06-v2.docx`.
+
+      **Finding: Kevin's rules were already in the card.** The "Before Anything Posts"
+      block already carried all eight — 125-character keywords, vehicle named, human alt
+      text, five-hashtag cap with `#JackmanWheels`, one ask, tagging, burned-in captions,
+      first-hour replies. Nothing to fold in.
+
+      What the card actually needed was the opposite: a **Never** entry had gone stale and
+      was telling the team the wrong thing. It read *"✗ A founding year in copy.
+      'California-born' until the family settles 1968 vs the mid-1970s."* Replaced with
+      *"✗ A vague founding date. It is 'Established 1968' or 'Est. 1968' — never 'the
+      1960s,' never 'the mid-70s,' never a hedge."*
+
+      **Open discrepancy, needs your call:** the card's weekly target is **100–300 net new
+      followers**; this checklist says **400–800**. Both can't be the number on the Monday
+      sheet. The card's figure is the more realistic one from 928 followers. *(Left split
+      deliberately rather than picked silently.)*
+- [x] **C-04 — Adopt the ten repeatable formats.** ✅ **DONE 6 Oct 2026** →
+      `01 Content Calendar/jackman-content-formats-2026-10-06-v1.md`. All ten written up
+      with the pillar each serves, the job it does, shoot notes, and the specific
+      guardrail that most often breaks it. Includes a batch-shoot split showing which
+      five formats need a vehicle in front of you and which five don't — that split is
+      what makes `C-01` survivable for one person.
+
+      **Gap flagged in the doc:** Branding carries the largest share of the week and has
+      exactly one named format. Thinnest part of the system; next format invented should
+      be a second Branding shape.
 - [ ] **C-05 — Make heritage a standing weekly slot.** Second beat on Instagram, first
       beat on Facebook. Highest save-and-send rate of anything we can post — car people
       archive this material. · *Unblocked 15 Sep — run it.*
 - [ ] **C-06 — Launch "Jackman Build of the Month"** with a real prize. Drives mentions,
       which drive the UGC engine. · *Effort: 4h setup*
+- [ ] **W-12 — Jeep and Toyota collections already exist — extend them, don't duplicate.**
+      Found 6 Oct 2026. Kevin's audit said there was no Jeep and no Toyota collection;
+      both have since been created: `/collections/jeep-wheels` (rule: TAG = `5x127`) and
+      `/collections/toyota-truck-wheels` (rule: TAG = `5x150` OR `6x139`). Both currently
+      return all 18 products, so they don't yet do the job — but **the handles are taken,
+      and `W-05` must build on these URLs rather than minting
+      `/collections/jeep-wrangler-wheels` alongside them.** Two near-identical Jeep
+      collections would make the duplicate-content problem worse, not better. ·
+      *Effort: folded into W-05*
 - [ ] **W-05 — Publish the first four vehicle fitment landing pages:**
       `/collections/jeep-wrangler-wheels`, `/collections/toyota-tacoma-wheels`,
       `/collections/ford-f150-wheels`, `/collections/ram-2500-wheels`. 200–400 words of
@@ -424,18 +532,20 @@ can't be fixed with effort — only with a decision.
 ## Item index — for the monthly report
 
 `B-01` founding date ✅ · `B-02` HQ address · `B-03` .shop domain ✅ · `B-04` printed hashtag ·
-`B-05` our story page · `B-06` homepage line · `B-07` source the 1968 claim
+`B-05` our story page ✅ · `B-06` homepage line ✅ · `B-07` source the 1968 claim ·
+`B-08` 1968 on the homepage · `B-09` dead accessories tile
 
-`P-01` IG name field · `P-02` IG bio · `P-03` search indexing on · `P-04` highlights ·
+`P-01` IG name field ✅ · `P-02` IG bio ✅ · `P-03` search indexing on ✅ · `P-04` highlights ·
 `P-05` bio link · `P-06` TikTok/YT handles ✅ · `P-07` curated follows · `P-08` cross-post
 
-`C-01` batch shoot · `C-02` cadence · `C-03` desk card merge · `C-04` ten formats ·
+`C-01` batch shoot · `C-02` cadence · `C-03` desk card merge ✅ · `C-04` ten formats ✅ ·
 `C-05` heritage slot · `C-06` build of the month · `C-07` collabs · `C-08` dealer
 spotlights · `C-09` trial reels · `C-10` blog cadence · `C-11` micro-creators
 
 `W-01` social links ✅ · `W-02` org schema · `W-03` duplicate collections · `W-04`
 accessories page · `W-05` fitment pages · `W-06` H1s · `W-07` reviews · `W-08` alt text ·
-`W-09` spec tables ✅ · `W-10` social link UTMs · `W-11` warranty line fix
+`W-09` spec tables ✅ · `W-10` social link UTMs · `W-11` warranty line fix ·
+`W-12` Jeep/Toyota collections exist — extend, don't duplicate
 
 `L-01` GBP · `L-02` dealer locator · `L-03` where to buy · `L-04` directories · `L-05`
 media pitch

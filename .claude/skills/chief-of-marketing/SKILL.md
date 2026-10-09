@@ -57,7 +57,8 @@ Before finalizing any customer-facing language (email copy, content-idea hooks, 
 direction that includes copy): check it against the `jackman-brand-guidelines` skill's
 guardrails — the same 16 guardrails in `jackman-claude-instructions.md` (finishes,
 Classic 68, six models only, load rating only the confirmed 2650 lbs 5-lug/6-lug or
-4500 lbs 8-lug figure — never a certification claim, no founding date, no invented part
+4500 lbs 8-lug figure — never a certification claim, founding date is **1968** ("Established
+1968" / "Est. 1968", ratified 2026-10-06 per `D-01`) and never vaguer, no invented part
 number, dimension notation, ™ usage, nominative-use disclaimer, no unqualified lifetime
 warranty, contrast, no hex from memory, no militarized language, founder first names
 confined to the website's Our Story page) — and run the `humanizer` skill as the last

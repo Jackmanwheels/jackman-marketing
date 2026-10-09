@@ -14,7 +14,7 @@ These don't change week to week. Everything in Part 2 is subject to them.
 
 ### A. Never ships
 
-1. **No founding decade or year.** The homepage says 1960s, Our Story says mid-1970s. Until that's settled: "California-born," "born in a California garage," "founded by Harry and Sheryl Jackman."
+1. **Founding date is 1968.** "Established 1968" or "Est. 1968." Pairs with "born in a California garage." No founder first names outside the Our Story page (guardrail #16). Ratified 2026-10-06.
 2. **No load rating, certification, torque value, or strength claim.** No JWL, VIA, SAE, or TÜV. None of it is published, and a revived brand cannot absorb one wheel-failure story.
 3. **Never "lifetime warranty" unqualified, never any implication of coverage off-road.** Approved: "Limited lifetime structural warranty and a five-year finish warranty — see full terms," always linked.
 4. **™ on exactly three names, first use only:** Radial Flow Form™ (R-FF™), Reverse Draft Technology™, Dual Vector Retention™ (DV-RET™). Never on Enhanced Bead Retention, Fixed Cap Orientation, or Water Relief Channels. Never verb or pluralize a mark — "Radial Flow Formed" is wrong.
@@ -60,7 +60,7 @@ These don't change week to week. Everything in Part 2 is subject to them.
 
 **Account setup — do this before any content ships**
 
-- [ ] Rewrite the IG bio: what we make, who it's for, where to buy, California. No founding year.
+- [ ] Rewrite the IG bio: what we make, who it's for, where to buy, Est. 1968.
 - [ ] Create Story Highlight containers by **vehicle platform**, empty for now: Sierra/Silverado · Tacoma · 4Runner · Gladiator/JK–JL · Bronco · F-150/Super Duty · Ram · Overland. Method organizes this way and it's correct — a buyer knows their truck, not your model numbers. Vossen sorts by product series and it's a menu in a language the customer hasn't learned.
 - [ ] Facebook page: confirm it's a proper business page. About filled, Shop tab, reviews enabled, Events enabled.
 - [ ] Link IG and FB in Meta Business Suite. Required for cross-posting and for ads later.
@@ -171,7 +171,8 @@ One filled-in monthly template in `10 Analytics and Insights` becomes a twelve-m
 3. UGC in the grid — Collab, and permission filed?
 4. Any number, spec, rating or certification that isn't published? Then it comes out.
 5. ™ correct — the three marks only?
-6. Founding decade mentioned? Then it comes out.
+6. Founding date mentioned? It reads "Established 1968" or "Est. 1968" — nothing vaguer, nothing else.
 7. "Lifetime warranty" unqualified, or any implication of off-road coverage? Then it comes out.
 8. Bronze type on graphite?
-9. Run `scripts/brand_check.py` on the caption.
+9. Run `scripts/brand_check.ps1` on the caption. Mechanical check only — it catches
+   what a pattern can catch, never pillar, job, sendability or tone.
