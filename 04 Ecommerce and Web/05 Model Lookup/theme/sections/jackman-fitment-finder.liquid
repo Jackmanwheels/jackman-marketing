@@ -1,0 +1,260 @@
+{%- comment -%}
+  Jackman Fitment Finder — "Shop by Vehicle" lookup.
+  One section, two behaviours:
+    - Homepage (or any page): pick Year / Make / Model, see every Jackman wheel that fits.
+    - Product page: pick a vehicle (or reuse the saved one) and see which sizes of THIS wheel fit.
+  Vehicle data lives in assets/jackman-fitment.json (generated from the fitment Excel by
+  scripts/excel_to_fitment_json.py). The chosen vehicle is remembered in the browser so it
+  carries from the homepage to product pages.
+{%- endcomment -%}
+
+{%- liquid
+  assign source_collection = collections[section.settings.collection]
+  if source_collection
+    assign wheel_products = source_collection.products
+  else
+    assign wheel_products = collections.all.products
+  endif
+-%}
+
+<div class="jff" id="jff-{{ section.id }}" data-mode="{% if product %}product{% else %}browse{% endif %}">
+  <div class="jff__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="jff__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="jff__sub">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <form class="jff__form" onsubmit="return false;">
+      <label class="jff__field">
+        <span>Year</span>
+        <select data-jff="year" aria-label="Year"><option value="">Year</option></select>
+      </label>
+      <label class="jff__field">
+        <span>Make</span>
+        <select data-jff="make" aria-label="Make" disabled><option value="">Make</option></select>
+      </label>
+      <label class="jff__field">
+        <span>Model</span>
+        <select data-jff="model" aria-label="Model" disabled><option value="">Model</option></select>
+      </label>
+      <button type="button" class="jff__reset" data-jff="reset" hidden>Change vehicle</button>
+    </form>
+
+    <div class="jff__results" data-jff="results" aria-live="polite"></div>
+  </div>
+
+  <script type="application/json" data-jff="products">
+    [
+      {%- if product -%}
+        {%- render 'jackman-fitment-product-json', p: product -%}
+      {%- else -%}
+        {%- assign first = true -%}
+        {%- for p in wheel_products -%}
+          {%- if p.type != 'Wheels' -%}{%- continue -%}{%- endif -%}
+          {%- unless first %},{% endunless -%}
+          {%- render 'jackman-fitment-product-json', p: p -%}
+          {%- assign first = false -%}
+        {%- endfor -%}
+      {%- endif -%}
+    ]
+  </script>
+</div>
+
+<style>
+  #jff-{{ section.id }} { background: {{ section.settings.bg }}; color: {{ section.settings.text }}; padding: 40px 16px; }
+  #jff-{{ section.id }} .jff__inner { max-width: 1100px; margin: 0 auto; }
+  #jff-{{ section.id }} .jff__heading { margin: 0 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+  #jff-{{ section.id }} .jff__sub { margin: 0 0 20px; opacity: .8; }
+  #jff-{{ section.id }} .jff__form { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 12px; align-items: end; }
+  #jff-{{ section.id }} .jff__field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+  #jff-{{ section.id }} select { width: 100%; padding: 12px; font-size: 16px; border: 1px solid currentColor; background: transparent; color: inherit; }
+  #jff-{{ section.id }} select option { color: #000; }
+  #jff-{{ section.id }} .jff__reset { padding: 12px 16px; border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; }
+  #jff-{{ section.id }} .jff__results { margin-top: 24px; }
+  #jff-{{ section.id }} .jff__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  #jff-{{ section.id }} .jff__card { display: block; color: inherit; text-decoration: none; border: 1px solid rgba(127,127,127,.3); padding: 12px; }
+  #jff-{{ section.id }} .jff__card img { width: 100%; height: auto; display: block; }
+  #jff-{{ section.id }} .jff__card h3 { font-size: 15px; margin: 10px 0 4px; }
+  #jff-{{ section.id }} .jff__sizes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  #jff-{{ section.id }} .jff__size { font-size: 13px; padding: 6px 10px; border: 1px solid currentColor; color: inherit; text-decoration: none; }
+  #jff-{{ section.id }} .jff__size[aria-disabled="true"] { opacity: .4; }
+  #jff-{{ section.id }} .jff__msg { padding: 14px 16px; border-left: 4px solid {{ section.settings.accent }}; background: rgba(127,127,127,.08); }
+  #jff-{{ section.id }} .jff__msg strong { color: {{ section.settings.accent }}; }
+  @media (max-width: 749px) {
+    #jff-{{ section.id }} .jff__form { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.getElementById('jff-{{ section.id }}');
+    if (!root) return;
+    var DATA_URL = {{ 'jackman-fitment.json' | asset_url | json }};
+    var STORE_KEY = 'jackman_vehicle';
+    var CONTACT_URL = {{ section.settings.contact_url | default: '/pages/contact' | json }};
+    var isProduct = root.dataset.mode === 'product';
+    var products = JSON.parse(root.querySelector('[data-jff="products"]').textContent);
+    var sel = {
+      year: root.querySelector('[data-jff="year"]'),
+      make: root.querySelector('[data-jff="make"]'),
+      model: root.querySelector('[data-jff="model"]')
+    };
+    var resetBtn = root.querySelector('[data-jff="reset"]');
+    var out = root.querySelector('[data-jff="results"]');
+    var vehicles = [];
+
+    // Variant titles mix inch and metric bolt patterns ("6x5.5", "6x139.7"); normalise to metric.
+    var BOLT_ALIASES = { '5x4.5': '5x114.3', '5x5': '5x127', '5x5.5': '5x139.7', '6x5.5': '6x139.7', '8x6.5': '8x165.1', '6x139': '6x139.7', '8x165': '8x165.1' };
+    function normBolt(s) {
+      var b = String(s || '').toLowerCase().replace(/\s+/g, '').replace('mm', '');
+      return BOLT_ALIASES[b] || b;
+    }
+    // "17x8.5 | 6x5.5 | -6 MM" -> { size: "17x8.5", bolt: "6x139.7", offset: -6 }
+    function parseVariant(title) {
+      var parts = String(title).split('|').map(function (s) { return s.trim(); });
+      if (parts.length < 3) return null;
+      return { size: parts[0].toLowerCase(), bolt: normBolt(parts[1]), offset: parseInt(parts[2], 10) };
+    }
+    function fits(spec, v) {
+      if (!spec || spec.bolt !== normBolt(v.bolt_pattern)) return false;
+      if (v.offset_min != null && spec.offset < v.offset_min) return false;
+      if (v.offset_max != null && spec.offset > v.offset_max) return false;
+      if (v.diameters && v.diameters.length && v.diameters.indexOf(parseInt(spec.size, 10)) === -1) return false;
+      return true;
+    }
+
+    function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+    function uniq(arr) { return arr.filter(function (x, i) { return arr.indexOf(x) === i; }); }
+    function fill(select, values, placeholder) {
+      select.innerHTML = '<option value="">' + placeholder + '</option>' +
+        values.map(function (v) { return '<option value="' + esc(v) + '">' + esc(v) + '</option>'; }).join('');
+      select.disabled = values.length === 0;
+    }
+    function forYear(y) { return vehicles.filter(function (v) { return y >= v.year_from && y <= v.year_to; }); }
+
+    function populateYears() {
+      var min = Infinity, max = -Infinity;
+      vehicles.forEach(function (v) { min = Math.min(min, v.year_from); max = Math.max(max, v.year_to); });
+      var years = [];
+      for (var y = max; y >= min; y--) years.push(y);
+      fill(sel.year, years, 'Year');
+    }
+    function populateMakes() {
+      var y = parseInt(sel.year.value, 10);
+      fill(sel.make, y ? uniq(forYear(y).map(function (v) { return v.make; })).sort() : [], 'Make');
+      fill(sel.model, [], 'Model');
+    }
+    function populateModels() {
+      var y = parseInt(sel.year.value, 10), mk = sel.make.value;
+      var models = forYear(y).filter(function (v) { return v.make === mk; }).map(function (v) { return v.model; });
+      fill(sel.model, uniq(models).sort(), 'Model');
+    }
+
+    function currentVehicle() {
+      var y = parseInt(sel.year.value, 10), mk = sel.make.value, md = sel.model.value;
+      if (!y || !mk || !md) return null;
+      var match = forYear(y).filter(function (v) { return v.make === mk && v.model === md; })[0];
+      return match ? { year: y, make: mk, model: md, spec: match } : null;
+    }
+
+    function save(veh) {
+      try { localStorage.setItem(STORE_KEY, JSON.stringify({ year: veh.year, make: veh.make, model: veh.model })); } catch (e) {}
+    }
+    function load() {
+      try { return JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch (e) { return null; }
+    }
+    function clear() { try { localStorage.removeItem(STORE_KEY); } catch (e) {} }
+
+    function track(name, veh, count) {
+      // GA4 / Shopify customer events pick this up if a listener is wired; harmless otherwise.
+      try {
+        (window.dataLayer = window.dataLayer || []).push({ event: name, vehicle_year: veh.year, vehicle_make: veh.make, vehicle_model: veh.model, fit_count: count });
+      } catch (e) {}
+    }
+
+    function sizeLinks(p, matches) {
+      return matches.map(function (m) {
+        var label = m.v.title.split('|').map(function (s) { return s.trim(); }).join(' / ');
+        return '<a class="jff__size" href="' + esc(p.url) + '?variant=' + m.v.id + '"' +
+          (m.v.available ? '' : ' aria-disabled="true"') + '>' + esc(label) + (m.v.available ? '' : ' (sold out)') + '</a>';
+      }).join('');
+    }
+
+    function render(veh) {
+      if (!veh) { out.innerHTML = ''; resetBtn.hidden = true; return; }
+      resetBtn.hidden = false;
+      var name = veh.year + ' ' + veh.make + ' ' + veh.model;
+      var hits = products.map(function (p) {
+        var matches = p.variants.map(function (v) { return { v: v, spec: parseVariant(v.title) }; })
+          .filter(function (m) { return fits(m.spec, veh.spec); });
+        return { p: p, matches: matches };
+      }).filter(function (h) { return h.matches.length; });
+      var note = veh.spec.notes ? ' <br><small>' + esc(veh.spec.notes) + '</small>' : '';
+
+      if (isProduct) {
+        var h = hits[0];
+        out.innerHTML = h
+          ? '<div class="jff__msg"><strong>&#10003; Fits your ' + esc(name) + '.</strong> ' + h.matches.length +
+            ' size' + (h.matches.length > 1 ? 's' : '') + ' fit:' + note + '<div class="jff__sizes">' + sizeLinks(h.p, h.matches) + '</div></div>'
+          : '<div class="jff__msg"><strong>No direct fit for your ' + esc(name) + '</strong> in this wheel. ' +
+            '<a href="/">See wheels that fit</a> or <a href="' + esc(CONTACT_URL) + '">ask our team</a>.' + note + '</div>';
+      } else {
+        out.innerHTML = hits.length
+          ? '<p class="jff__msg"><strong>' + hits.length + ' wheel' + (hits.length > 1 ? 's' : '') + ' fit your ' + esc(name) + '.</strong>' + note + '</p>' +
+            '<div class="jff__grid">' + hits.map(function (h) {
+              return '<div class="jff__card"><a href="' + esc(h.p.url) + '" style="color:inherit;text-decoration:none">' +
+                (h.p.image ? '<img src="' + esc(h.p.image) + '" alt="' + esc(h.p.title) + '" loading="lazy">' : '') +
+                '<h3>' + esc(h.p.title) + '</h3></a><div class="jff__sizes">' + sizeLinks(h.p, h.matches) + '</div></div>';
+            }).join('') + '</div>'
+          : '<p class="jff__msg"><strong>Nothing in the current lineup bolts onto a ' + esc(name) + ' yet.</strong> ' +
+            '<a href="' + esc(CONTACT_URL) + '">Tell us what you drive</a> and we\'ll let you know when that changes.</p>';
+      }
+      track(isProduct ? 'jackman_fitment_check' : 'jackman_fitment_search', veh, isProduct ? (hits[0] ? hits[0].matches.length : 0) : hits.length);
+    }
+
+    sel.year.addEventListener('change', function () { populateMakes(); render(null); });
+    sel.make.addEventListener('change', function () { populateModels(); render(null); });
+    sel.model.addEventListener('change', function () {
+      var veh = currentVehicle();
+      if (veh) save(veh);
+      render(veh);
+    });
+    resetBtn.addEventListener('click', function () {
+      clear(); sel.year.value = ''; populateMakes(); render(null);
+    });
+
+    fetch(DATA_URL).then(function (r) { return r.json(); }).then(function (json) {
+      vehicles = json.vehicles || [];
+      populateYears();
+      var saved = load();
+      if (saved) {
+        sel.year.value = saved.year; populateMakes();
+        sel.make.value = saved.make; populateModels();
+        sel.model.value = saved.model;
+        render(currentVehicle());
+      }
+    }).catch(function () {
+      out.innerHTML = '<p class="jff__msg">Vehicle lookup is unavailable right now. <a href="' + esc(CONTACT_URL) + '">Ask our team</a> about fitment.</p>';
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Jackman fitment finder",
+  "tag": "section",
+  "class": "section-jackman-fitment",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Shop by vehicle" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Pick your truck. We'll show you what bolts on." },
+    { "type": "collection", "id": "collection", "label": "Wheel collection (homepage)", "info": "Leave blank to search all products typed 'Wheels'." },
+    { "type": "url", "id": "contact_url", "label": "Fitment help link" },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#111111" },
+    { "type": "color", "id": "text", "label": "Text", "default": "#ffffff" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#c8102e" }
+  ],
+  "presets": [{ "name": "Jackman fitment finder" }]
+}
+{% endschema %}

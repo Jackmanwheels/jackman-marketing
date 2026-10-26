@@ -1,0 +1,134 @@
+{
+ "updated": "2026-10-26",
+ "vehicles": [
+  {
+   "year_from": 2019,
+   "year_to": 2026,
+   "make": "Chevrolet",
+   "model": "Silverado 1500",
+   "bolt_pattern": "6x139.7",
+   "hub_bore_mm": 78.1,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2011,
+   "year_to": 2026,
+   "make": "Chevrolet",
+   "model": "Silverado 2500HD",
+   "bolt_pattern": "8x180",
+   "hub_bore_mm": 124.1,
+   "diameters": [
+    18,
+    20
+   ],
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2021,
+   "year_to": 2026,
+   "make": "Ford",
+   "model": "Bronco",
+   "bolt_pattern": "6x139.7",
+   "hub_bore_mm": 93.1,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2015,
+   "year_to": 2026,
+   "make": "Ford",
+   "model": "F-150",
+   "bolt_pattern": "6x135",
+   "hub_bore_mm": 87.1,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2005,
+   "year_to": 2026,
+   "make": "Ford",
+   "model": "F-250 Super Duty",
+   "bolt_pattern": "8x170",
+   "hub_bore_mm": 124.9,
+   "diameters": [
+    18,
+    20
+   ],
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2019,
+   "year_to": 2026,
+   "make": "GMC",
+   "model": "Sierra 1500",
+   "bolt_pattern": "6x139.7",
+   "hub_bore_mm": 78.1,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2020,
+   "year_to": 2026,
+   "make": "Jeep",
+   "model": "Gladiator",
+   "bolt_pattern": "5x127",
+   "hub_bore_mm": 71.5,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2018,
+   "year_to": 2026,
+   "make": "Jeep",
+   "model": "Wrangler JL",
+   "bolt_pattern": "5x127",
+   "hub_bore_mm": 71.5,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2019,
+   "year_to": 2026,
+   "make": "Ram",
+   "model": "1500",
+   "bolt_pattern": "6x139.7",
+   "hub_bore_mm": 77.8,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2012,
+   "year_to": 2026,
+   "make": "Ram",
+   "model": "2500",
+   "bolt_pattern": "8x165.1",
+   "hub_bore_mm": 121.3,
+   "diameters": [
+    18,
+    20
+   ],
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2003,
+   "year_to": 2024,
+   "make": "Toyota",
+   "model": "4Runner",
+   "bolt_pattern": "6x139.7",
+   "hub_bore_mm": 106.1,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2005,
+   "year_to": 2023,
+   "make": "Toyota",
+   "model": "Tacoma",
+   "bolt_pattern": "6x139.7",
+   "hub_bore_mm": 106.1,
+   "notes": "SAMPLE - verify"
+  },
+  {
+   "year_from": 2007,
+   "year_to": 2021,
+   "make": "Toyota",
+   "model": "Tundra",
+   "bolt_pattern": "5x150",
+   "hub_bore_mm": 110.1,
+   "notes": "SAMPLE - verify"
+  }
+ ]
+}
